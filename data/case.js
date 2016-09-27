@@ -118,7 +118,7 @@ var casees = [
 					publishTime:"2011-11-16 22:08",
 					caseThumbnail:"images/icon/exp.png",
 					caseDescription:"浏览器可以被认为浏览器可以被认为浏览器可以被认为浏览器可以被认 为浏览器可以被认为浏览器可以被认为浏览器可以被认为浏览器可以被认为浏览器可 以被认为浏览器可以被认为浏览器可以被认为浏览器可以被认为浏览器可以被认为 浏览器可以被认为浏览器可以被认为"
-					,caseWebsite:"haocan.github.io/for/Tab"
+					,caseWebsite:"haocan.github.io/type/Tab"
 
 				},
 				{
