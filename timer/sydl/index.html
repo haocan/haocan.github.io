@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	div{
+		width: 50px;
+		height: 50px;
+		background: red;
+		position: absolute;
+		top: 0;
+		transition: 1s;
+	}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		var len = 5;
+
+		for(var i=0;i<len;i++){
+			(function(){
+				//创建div
+				var div = document.createElement('div');
+				div.style.left = i*60+'px';
+				div.onclick = function(){
+					this.style.top = '500px';
+					//向前和向后的运动调用。
+					slied(this.previousElementSibling,'previousElementSibling');
+					slied(this.nextElementSibling,'nextElementSibling');
+				};
+				document.body.appendChild(div);
+			})();
+		}
+		//div滑动实现
+		function slied(node,fx){
+			//node是运动的div，fx指的是向前还是向后。
+			if(!node)return;
+			setTimeout(function(){
+				node.style.top = '500px';
+
+				slied(node[fx],fx);
+			}, 100);
+		}
+		/*//递归滑动当前节点的前一个节点
+		function pre(node){
+			if(!node)return;
+			setTimeout(function(){
+				node.style.top = '500px';
+				pre(node.previousElementSibling);
+			}, 200);
+		}
+		//递归滑动当前节点的后一个节点
+		function next(node){
+			if(!node)return;
+			setTimeout(function(){
+				node.style.top = '500px';
+				next(node.nextElementSibling);
+			}, 200);
+		}*/
+	</script>
+</body>
+</html>

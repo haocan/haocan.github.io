@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="mQuery.js"></script>
+		<style>
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				width: 300px;
+				text-indent: 10px;
+				margin: 50px auto;
+			}
+			ul li{
+				height: 60px;
+				line-height: 60px;
+				background: #ccc;
+				font-weight: bold;
+				font-size: 20px;
+			}
+			.text{
+				background: #002952;
+				color:#fff;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="list">
+			<li class="text">这是首行</li>
+			<li>111111</li>
+			<li>22222</li>
+			<li>33333</li>
+			<li>44444</li>
+			<li>555555</li>
+			<li>66666</li>
+			<li>77777</li>
+			<li>88888</li>
+			<li class="text">这是末行</li>
+		</ul>
+	</body>
+	<script>
+		var lis = $('.text')
+		console.log(lis[0].nextElementSibling)
+		
+		var ul = document.getElementById('list');
+//		ul.firstElementChild.onmouseover = function(){
+//			this.style.background = '#C12E2A';
+//			this.style.color = '#000';
+//		};
+//		ul.firstElementChild.onmouseout = function(){
+//			this.style.background = '';
+//			this.style.color = '';
+//		};
+//		ul.lastElementChild.onmouseover = function(){
+//			this.style.background = '#F06000';
+//			this.style.color = '#000';
+//		};
+//		ul.lastElementChild.onmouseout = function(){
+//			this.style.background = '';
+//			this.style.color = '';
+//		};
+		var lis = ul.children;
+		for(var i = 0;i<lis.length;i++){
+			lis[i].onmouseover = function(){
+				if(this == ul.firstElementChild || this == ul.lastElementChild){
+					this.style.background = '#F06000';
+					this.style.color = '#000';
+					return;
+				}
+				if(this.previousElementSibling == ul.firstElementChild){
+					this.nextElementSibling.style.background = '#C4AAC0';
+					this.nextElementSibling.style.color = 'blue';
+					this.style.background = '#0F820C';
+					this.style.fontSize = '40px';
+					return;
+				}
+				if(this.nextElementSibling == ul.lastElementChild){
+					this.previousElementSibling.style.background = '#C4AAC0';
+					this.previousElementSibling.style.color = 'blue';
+					this.style.background = '#0F820C';
+					this.style.fontSize = '40px';
+					return;
+				}
+				this.style.background = '#0F820C';
+				this.style.fontSize = '40px';
+				this.nextElementSibling.style.background = '#C4AAC0';
+				this.nextElementSibling.style.color = 'blue';
+				this.previousElementSibling.style.background = '#C4AAC0';
+				this.previousElementSibling.style.color = 'blue';
+			};
+			lis[i].onmouseout = function(){
+				this.style.background = '';
+				this.style.fontSize = '';
+				this.nextElementSibling.style.background = '';
+				this.nextElementSibling.style.color = '';
+				this.previousElementSibling.style.background = '';
+				this.previousElementSibling.style.color = '';
+			};
+		}
+	
+	</script>
+</html>

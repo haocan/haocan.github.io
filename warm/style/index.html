@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background: #C0C0C0;
+				opacity: .9;
+			}
+			a{
+				text-decoration: none;
+			}
+			#set{
+				font-size: 24px;
+				color: #000;
+				line-height: 40px;
+				font-weight: bold;
+			}
+			#style{
+				display: inline-block;
+				width: 100px;
+				height: 40px;
+				line-height: 40px;
+				color: #fff;
+				font-size: 12px;
+				text-align: center;
+				background: red;
+			}
+			.opcity{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				display: none;
+			}
+			.clarity{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(231,231,231,0.3);
+			}
+			#box{
+				width: 210px;
+				height: 180px;
+				border: 20px solid #000000;
+				padding: 10px;
+				position: absolute;
+				left: 500px;
+				top: 100px;
+			}
+			.color{
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				border: 1px solid #000;
+				color: #fff;
+			}
+			#bg{
+				font-size: 14px;
+				line-height: 20px;
+			}
+			#red{
+				background: red;
+			}
+			#red:hover{
+				background: green;
+			}
+			#yellow{
+				background: yellow;
+			}
+			#yellow:hover{
+				background: orange;
+			}
+			#blue{
+				background: blue;
+			}
+			#blue:hover{
+				background: black;
+			}
+			.width{
+				font-size: 14px;
+				line-height: 20px;
+				margin-top: 10px;
+			}
+			.width a:hover{
+				color: #fff;
+			}
+			.hunder{
+				display: inline-block;
+				width: 30px;
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				background: #f1f1f1;
+			}
+			.hunder:hover{
+				background: #000;
+			}
+			.button{
+				margin-top: 10px;
+				margin-left: 20px;
+			}
+			.sure{
+				display: inline-block;
+				width: 60px;
+				height: 30px;
+				line-height: 30px;
+				font-size: 14px;
+				text-align: center;
+				color: #fff;
+				background: #00008B;
+			}
+			#box1{
+				width: 100px;
+				height: 100px;
+				border: 4px solid #000;
+				margin-top: 20px;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var oA1=document.getElementById('style');
+				var oDiv1=document.getElementById('opcity1');
+				var oA2=document.getElementById('red');
+				var oA3=document.getElementById('yellow');
+				var oA4=document.getElementById('blue');
+				var oDiv2=document.getElementById('box1');
+				var oHun=document.getElementById('two');
+				var oHun1=document.getElementById('tree');
+				var oHun2=document.getElementById('four');
+				var oHight=document.getElementById('hig2');
+				var oHight1=document.getElementById('hig3');
+				var oHight2=document.getElementById('hig4');
+				var oSure=document.getElementById('remew');
+				var oSure1=document.getElementById('sure');
+				//点击样式设置，设显示置样式的div
+				oA1.onclick= function(){
+					oDiv1.style.display='block';
+				};
+				//点击红色按钮，背景色变成红色
+				oA2.onclick= function(){
+					oDiv2.style.background='red';
+				};
+				//点击宽200px，宽变成200px；
+				oHun.onclick=function(){
+					oDiv2.style.width='200px';
+				};
+				//宽变成300px
+				oHun1.onclick= function(){
+					oDiv2.style.width='300px';
+				};
+				//宽变成400px；
+				oHun2.onclick= function(){
+					oDiv2.style.width='400px';
+				};
+				//高变成200px；
+				oHight.onclick= function(){
+					oDiv2.style.height='200px';
+				};
+				//高变成300px；
+				oHight1.onclick= function(){
+					oDiv2.style.height='300px';
+				};
+				//高变成400px；
+				oHight2.onclick= function(){
+					oDiv2.style.height='400px';
+				};
+				//背景颜色变成黄色；
+				oA3.onclick= function(){
+					oDiv2.style.background='yellow';
+				};
+				//背景颜色变成蓝色
+				oA4.onclick= function(){
+					oDiv2.style.background='blue';
+				};
+				//取消按钮，恢复开始的样式
+				oSure.onclick= function(){
+					oDiv2.style.width='100px';
+					oDiv2.style.height='100px';
+					oDiv2.style.background='#fff';
+				};
+				//确定按钮，样式设置的div隐藏
+				oSure1.onclick= function(){
+					oDiv1.style.display='none';
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<div id="set">
+			请为下面的DIV设置样式:
+			<a href="javascript:;" id="style">
+				样式设置
+			</a>
+		</div>
+		<div id="box1"></div>
+		<div class="opcity" id="opcity1">
+			<div class="clarity"></div>
+			<div id="box">
+					<div id="bg">
+						请选择背景颜色:
+						<a href="javascript:;" class="color" id="red">
+							红
+						</a>
+						<a href="javascript:;" class="color" id="yellow">
+							黄
+						</a>
+						<a href="javascript:;" class="color" id="blue">
+							蓝
+						</a>
+					</div>
+					<div class="width">
+						请选择宽(px):
+						<a href="javascript:;" class="hunder" id="two">200</a>
+						<a href="javascript:;" class="hunder" id="tree">300</a>
+						<a href="javascript:;"class="hunder" id="four">400</a>
+					</div>
+					<div class="width">
+						请选择高(px):
+						<a href="javascript:;" class="hunder" id="hig2">200</a>
+						<a href="javascript:;" class="hunder" id="hig3">300</a>
+						<a href="javascript:;"class="hunder" id="hig4">400</a>
+					</div>
+					<div class="button">
+						<a href="javascript:;" class="sure" id="remew">恢复</a>
+						<a href="javascript:;" class="sure" id="sure">确定</a>
+					</div>
+				</div>
+			</div>
+	</body>
+</html>

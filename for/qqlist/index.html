@@ -1,0 +1,156 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	ul,ol{
+		margin: 0;
+		padding: 0;
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+		color:black;
+		width: 100%;
+		text-align: center;
+	}
+	h2{
+		margin: 0;
+		background:url(img/right.gif) no-repeat  10px center #63F7FF;	
+		padding-left: 20px; 
+		line-height: 30px;
+	}
+	ul{
+		border: 1px solid black;
+		width: 150px;
+	}
+	 ol{
+		display: none;
+	}
+	ol li{
+		line-height: 20px;
+		border-top: 1px solid black;
+		text-align: center;
+		display: block;
+		cursor:pointer;
+	}
+	ol li:nth-child(1){
+		border: none;
+	}
+	ol li.active{
+		background-color: #63F7FF;
+	}
+	h2.active{
+		background:url(img/down.gif) no-repeat  8px center #F7F794;
+	}
+	/*h2.active+ol{
+		display: block;
+	}*/
+	.show{
+		display: block;
+	}
+</style>
+</head>
+
+<body>
+	<ul id="list">
+		<li>
+			<h2><a href="javascript:;">我的好友</a></h2>
+			<ol>
+				<li>张三</li>
+				<li>张三</li>
+				<li>张三</li>
+				<li>张三</li>
+			</ol>
+		</li>
+		<li>
+			<h2><a href="javascript:;">企业好友</a></h2>
+			<ol>
+				<li>李四</li>
+				<li>李四</li>
+				<li>李四</li>
+				<li>李四</li>
+				<li>李四</li>
+			</ol>
+		</li>
+		<li>
+			<h2><a href="javascript:;">黑名单</a></h2>
+			<ol>
+				<li>钟毅</li>
+				<li>钟毅</li>
+				<li>钟毅</li>
+			</ol>
+		</li>
+	</ul>
+</body>
+<script>
+/*需求 
+ * 1、点击h2的时候，当时的状态如果是关着的点击就能打开，
+	开着的点击一下就能关闭(开关)
+	2、点击ol里的li，如果当时没有颜色点击一下就有颜色，有颜色点击一下就没有颜色
+	（开关）。
+	3、如果点击不是上一次的h2，就把上一次的关掉，打开现在的
+	4、如果点击的不是上一次的li，就把上一次的关掉，打开当前的。
+*/
+	//获取元素
+	var h2s=document.getElementsByTagName('h2');
+	var Ols=document.getElementsByTagName('ol');
+	var prevH2=h2s[0];
+	var prevLi=null;
+	
+	//用到for循环，是因为有3个h2标签，都需要点击。
+	for(var i=0;i<h2s.length;i++){
+		h2s[i].onOff=true;//默认是关着的。
+		//索引值
+		h2s[i].index=i;
+		h2s[i].onclick=function(){
+			if(this.onOff){
+				Ols[this.index].className='show';
+				this.className='active';
+				this.onOff=false;
+			}else{
+				this.className='';
+				this.onOff=true;
+				Ols[this.index].className='';
+			}
+			/*
+			 * 如果上一次点击的不是这一次点击的，那么上一次点击的就要被关掉，
+			 * 上一次点击的开关就变成默认的关。上一次点击的h2里边的ol就变成了none。
+			 */
+			if(prevH2!=this){
+				prevH2.className='';
+				Ols[prevH2.index].className='';
+				prevH2.onOff=true;
+			}
+			prevH2=this;//上次点击的是这次点击的
+		};
+	}
+	for(var i=0;i<Ols.length;i++){
+		//先找到3个ol，从ol里找li。
+		var lis = Ols[i].getElementsByTagName('li');
+		for(var j=0;j<lis.length;j++){
+			lis[j].onOff=true;//默认本身的li是没有颜色的。
+			prevLi=lis[0];
+			lis[j].onclick=function(){
+				if(this.onOff){
+					this.className='active';
+					this.onOff=false;
+				}else{
+					this.className='';
+					this.onOff=true;
+				}
+				if(prevLi!=this){
+					prevLi.className='';
+					prevLi.onOff=true;
+				}
+				prevLi=this;
+//				this.onOff=!this.onOff;就是相当于lis[j]
+//里的this.onOff=false;this.onOff=true;
+			}
+		}
+	}
+</script>
+</html>

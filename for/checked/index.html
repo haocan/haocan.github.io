@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			li{
+				width: 500px;
+				height: 40px;
+				line-height: 40px;
+				border-bottom: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<input type="checkbox" id="" value="" />
+				私奔
+			</li>
+			<li>
+				<input type="checkbox" id="" value="" />
+				北京北京
+			</li>
+			<li>
+				<input type="checkbox" id="" value="" />
+				我爱你中国
+			</li>
+			<li>
+				<input type="checkbox" id="" value="" />
+				花火
+			</li>
+			<li>
+				<input type="checkbox" id="" value="" />
+				回来
+			</li>
+		</ul>
+		<div id="box">
+			<input type="checkbox"  id="all" value="" />
+		</div>
+	</body>
+	<script>
+		var lis = document.getElementsByTagName('li');
+		var ips = document.getElementsByTagName('input');
+		var arr = ['pink','orange'];
+		var all = document.getElementById('all');
+		for(var i = 0;i<lis.length;i++){
+			(function(n){
+				//隔行变色
+				lis[n].style.background = arr[n%arr.length];
+				//li移入变色
+				lis[n].onmouseover = function(){
+					//如果按钮被选中，return阻断代码，后面的颜色将不会执行
+					if(ips[n].checked){
+						return;
+					}
+					this.style.background = 'red';
+				};
+				//移出恢复原来的颜色。
+				lis[n].onmouseout = function (){
+					//如果按钮被选中，return阻断代码，后面的颜色将不会执行。
+					if(ips[n].checked){
+						return;
+					}
+					//用函数自执行，i是可以用的，但是如果不用数组的i都要用索引值代替。
+					this.style.background = arr[n%arr.length];
+				};
+				//ips点击事件。变色，选中变色，不选中恢复移入的颜色。
+				ips[n].onchange = function (){
+					if(this.checked){
+						lis[n].style.background = 'cyan';
+					}else{
+						lis[n].style.background = 'red';
+					}
+					all.checked = fn();//返回值
+					//这里不是在调用函数，而是在看返回的是false或true。
+				}
+			})(i);	
+		}
+		all.onclick = function(){
+			//点击all多个ips在变，所以要用for循环。
+			for(var i = 0;i<lis.length;i++){
+				//所有按钮被选中，当前的all也会被选中。
+			ips[i].checked = this.checked;
+				/*
+				 * 做判断，如果全选all被勾选，所有的
+				 * ips被勾选。li变颜色
+				 * 如果all不被勾选，所有的ips不被勾选。
+				 * li恢复颜色。
+				 */
+				if(this.checked){
+					lis[i].style.background = 'cyan';
+				}else{
+					lis[i].style.background = arr[i%arr.length];
+				}
+				
+			}
+		};
+		function fn(){
+			//判断所有的ips是否被全选中。
+			for(var i = 0;i<lis.length;i++){
+				/*
+				 没有被选中，当我有一个没有选中，就会
+				 返false，然后阻断代码运行，终止函数。
+				 * */
+				if(!ips[i].checked){
+					return false;
+				}
+			}
+			/*
+			 for循环条件走完，如果全被选中就会返true。
+			 * */
+			return true;
+		}
+	</script>
+</html>

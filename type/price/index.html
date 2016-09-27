@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="list">
+			<li>
+				<input type="button"  value="-" />
+				<span>0</span>
+				<input type="button" value="+" />
+				单价：<em>12.5</em>元
+				小计：<i>0</i>元
+			</li>
+			<li>
+				<input type="button"  value="-" />
+				<span>0</span>
+				<input type="button" value="+" />
+				单价：<em>10.5</em>元
+				小计：<i>0</i>元
+			</li>
+			<li>
+				<input type="button"  value="-" />
+				<span>0</span>
+				<input type="button" value="+" />
+				单价：<em>8.5</em>元
+				小计：<i>0</i>元
+			</li>
+			<li>
+				<input type="button"  value="-" />
+				<span>0</span>
+				<input type="button" value="+" />
+				单价：<em>8</em>元
+				小计：<i>0</i>元
+			</li>
+			<li>
+				<input type="button"  value="-" />
+				<span>0</span>
+				<input type="button" value="+" />
+				单价：<em>14.5</em>元
+				小计：<i>0</i>元
+			</li>
+		</ul>
+		<div id="box">
+			商品合计共：<strong>0</strong>件
+			共花费：<strong>0</strong>元
+			其中最贵的商品单价：<strong>0</strong>元
+		</div>
+	</body>
+	<script>
+	/*
+	 1、点击减，span变小，点击加，span变大。
+	 * */
+		var ul=document.getElementById('list');
+		var lis=ul.getElementsByTagName('li');
+		var div=document.getElementById('box');
+		var strongs=div.getElementsByTagName('strong');
+		for(var i=0;i<5;i++){
+			count(i);
+		}
+		function count(index){
+			var inputs=lis[index].getElementsByTagName('input');
+			//span在li是唯一的，所以要取下标。
+			var spans=lis[index].getElementsByTagName('span')[0];
+			var em=lis[index].getElementsByTagName('em')[0];
+			var is=lis[index].getElementsByTagName('i')[0];
+			//自定义变量
+			lis[index].num=0;//数量
+			lis[index].sum=0;//元
+			//用数组写单价
+			var price=[12.5,10.5,8.5,8,14.5]
+			/*
+			 * 为了让客户不能随意更改innerHTML的值，所以我们
+			 *用自定义变量，没有用普通的var num=0;
+			 */
+			//点击减，span得值减小
+			inputs[0].onclick=function(){
+				lis[index].num--;
+				//数量不能小于0
+				if(lis[index].num<0){
+					lis[index].num=0;
+				}
+//				spans.innerHTML=lis[index].num;
+//				is.innerHTML=lis[index].num*price[0];
+				fn();
+			//可以用函数包起来
+			};
+			inputs[1].onclick=function(){
+				lis[index].num++;
+//				spans.innerHTML=lis[index].num;
+//				is.innerHTML=lis[index].num*price[0];
+				fn();
+			};
+			function fn(){
+				spans.innerHTML=lis[index].num;
+				/*
+				 * lis[index].sum自定义变量，让它的值就等于小计is的值。
+				 */
+				lis[index].sum=is.innerHTML=lis[index].num*price[index];
+				//传的是i的值，数组也可以通过i值改变。
+				var a=0;//单价
+				var b=0;//花费多少元
+				var c=0;//最贵商品多少
+				for(var i=0;i<lis.length;i++){
+					a+=lis[i].num;
+					b+=lis[i].sum;
+					/*
+					 * lis[i].num的值就是数量span的值
+					 * lis[i].sum的值就是小计is的值
+					 让数量不是0，循环不断赋值的。
+					 * */
+					if(lis[i].num>0&&price[i]>c){
+						c=price[i];
+					}
+				}
+				strongs[0].innerHTML=a;
+				strongs[1].innerHTML=b;
+				strongs[2].innerHTML=c;
+			}
+		}
+		
+	</script>
+</html>

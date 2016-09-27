@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src='mTween.js'></script>
+		<script type="text/javascript" src='tween.js'></script>
+		<style>
+			#box{
+				width: 510px;
+				height: 454px;
+				border: 5px solid red;
+				position: relative;
+				overflow: hidden;
+				margin: 50px auto;
+			}
+			#box div{
+				
+				width: 1020px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			img{
+				width: 510px;
+				height: 454px;
+				float: left;
+			}
+			
+			a{
+				text-decoration: none;
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				background: yellow;
+				font-size: 20px;
+				line-height: 30px;
+				color: black;
+				text-align: center;
+				top: 210px;
+			}
+			#next{
+				right: 0;
+			}
+			#prev{
+				left: 0;
+			}
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				position: absolute;
+				bottom: 0px;
+				width: 100%;
+				text-align: center;
+			}
+			li{
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background: black;
+			}
+			.active{
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div>
+				<img src="img/1.jpg"/>
+				<img src="img/1.jpg"/>
+			</div>
+			<a href="javascript:;" id="next">></a>
+			<a href="javascript:;" id="prev"><</a>
+			<ul id="list">
+				<li>
+					<!--<img src="img/1.jpg"/ id="show">
+					<div></div>-->
+				</li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+	</body>
+	<script>
+	var arr = ['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg','img/5.jpg']
+		function Img(eles){
+			this.divs = eles.getElementsByTagName('div')[0];
+			this.imgs = eles.getElementsByTagName('img');
+			this.as = eles.getElementsByTagName('a');
+			this.lis = eles.getElementsByTagName('li');
+			this.lis[0].className = "active"
+			this.num = 0;
+		}
+		Img.prototype.autoPlay = function(){
+			var self = this;
+			this.timer = setInterval(function(){
+				self.num++;
+				self.num%=arr.length;
+				self.imgs[1].src = arr[self.num]
+				for(var i = 0;i<self.lis.length;i++){
+					self.lis[i].className = "";
+				}
+				self.lis[self.num].className = "active"
+				mTween(self.divs,'left',-510,300,'linear',function(){
+					self.imgs[0].src = arr[self.num];
+					self.divs.style.left = "0px";
+				})
+				
+			},1000)
+		};
+		Img.prototype.click = function(){
+			var self = this;
+			this.as[0].onclick = function(){
+				self.num++;
+				self.num%=arr.length;
+				self.imgs[0].src = arr[self.num];
+				for(var i = 0;i<self.lis.length;i++){
+					self.lis[i].className = "";
+				}
+				self.lis[self.num].className = "active"
+			};
+			this.as[1].onclick = function(){
+				self.num--;
+				if(self.num<0){
+					self.num = arr.length-1;
+				}
+				self.imgs[0].src = arr[self.num]
+				for(var i = 0;i<self.lis.length;i++){
+					self.lis[i].className = "";
+				}
+				self.lis[self.num].className = "active"
+			}
+		};
+		Img.prototype.ck = function(){
+			var self = this;
+			for(var i = 0;i<this.lis.length;i++){
+				this.lis[i].index = i;
+				this.lis[i].onclick = function(){
+					for(var i = 0;i<self.lis.length;i++){
+						self.lis[i].className = "";
+					}
+					this.className = "active";
+					self.imgs[0].src = arr[this.index]
+					self.num = this.index;
+				}
+			}
+		}
+		Img.prototype.stop = function(){
+			clearInterval(this.timer)
+		}
+		var div = document.getElementById('box');
+		var play = new Img(div);
+		play.autoPlay();
+		play.click();
+		box.onmouseover = function(){
+			play.stop();
+		};
+		box.onmouseout = function(){
+			play.autoPlay();
+		}
+		play.ck();
+	</script>
+</html>
