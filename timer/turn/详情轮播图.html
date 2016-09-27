@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src='mTween.js'></script>
+		<script type="text/javascript" src='tween.js'></script>
+		<style>
+			p{
+				margin: 0;
+			}
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				width: 100%;
+				height: 100px;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+			#box{
+				width: 510px;
+				height: 454px;
+				border: 5px solid red;
+				position: relative;
+				overflow: hidden;
+				margin: 50px auto;
+			}
+			p{
+				width: 1020px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			img{
+				width: 510px;
+				height: 454px;
+				float: left;
+			}
+			li{
+				width: 100%;
+				height: 0px;
+				position: absolute;
+				left: 0;
+				bottom: 0px;
+				background: red;
+				opacity: .7;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<p>
+				<img src="img/1.jpg"/>
+				<img src="img/2.jpg"/>
+			</p>
+			<ul>
+				<li>
+					<h4>标题1，标题1，标题1，标题1标题1</h4>
+					<div>内容1回复我陈秘书测速打算</div>
+				</li>
+				<li>
+					<h4>标题2，标题1，标题1，标题1标题1</h4>
+					<div>内容1回复我陈秘书测速打算</div>
+				</li>
+				<li>
+					<h4>标题3，标题1，标题1，标题1标题1</h4>
+					<div>内容1回复我陈秘书测速打算</div>
+				</li>
+				<li>
+					<h4>标题4，标题1，标题1，标题1标题1</h4>
+					<div>内容1回复我陈秘书测速打算</div>
+				</li>
+				<li>
+					<h4>标题5，标题1，标题1，标题1标题1</h4>
+					<div>内容1回复我陈秘书测速打算</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script>
+	/*
+	 顺序：文字下去，图片左移动，文字再上来
+	 * */
+		var p = document.getElementsByTagName('p')[0];
+		var imgs = document.querySelectorAll('p>img');
+		var lis = document.querySelectorAll('li');
+		var arr = ['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg','img/5.jpg'];
+		//console.log(imgs);
+		var num = 0;
+		lis[num].style.height = '100px';//初始化，第一个图片上有对应的文字
+		setInterval(function(){
+			//让文字下去。
+			mTween(lis[num],'height',0,300,'linear',function(){
+				num++;
+				num%=5;
+				imgs[1].src = arr[num];//修改下一张图片，
+				//让p标签左移动。
+				mTween(p,'left',-510,300,'linear',function(){
+					imgs[0].src = arr[num];//修改第一张图片。
+					p.style.left = '0px';
+//					lis[num].style.bottom = '0px';
+					//让文字上来。
+					mTween(lis[num],'height',100,300,'linear')
+				})		
+			})
+			
+		},2000)
+	</script>
+</html>

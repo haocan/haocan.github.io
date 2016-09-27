@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="mTween.js"></script>
+		<script type="text/javascript" src="tween.js"></script>
+		<style>
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			li{
+				float: left;
+				width: 50px;
+				height: 70px;
+				/*overflow: hidden;
+				position: relative;*/
+			}
+			div{
+				width: 50px;
+				height: 70px;
+				margin: 0px auto;
+			}
+			img{
+				vertical-align: top;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<div>
+					<img src="imgage/0.jpg"/>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="imgage/0.jpg"/>
+				</div>
+			</li>
+			<li>
+				<img src="imgage/c.jpg"/>
+			</li>
+			<li>
+				<div>
+					<img src="imgage/0.jpg"/>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="imgage/0.jpg"/>
+				</div>
+			</li>
+			<li>
+				<img src="imgage/c.jpg"/>
+			</li>
+			<li>
+				<div>
+					<img src="imgage/0.jpg"/>
+				</div>
+			</li>
+			<li>
+				<div>
+					<img src="imgage/0.jpg"/>
+				</div>
+			</li>
+		</ul>
+	</body>
+	<script>
+		var imgs = document.querySelectorAll('div img');
+		var Imgs = document.querySelectorAll('li>img');
+		var divs = document.querySelectorAll('div');
+//		var div1 = document.getElementById('div1');
+		var date = new Date();
+		var h = date.getHours();
+		var m = date.getMinutes();
+		var s = date.getSeconds();
+		var time = totwo(h)+totwo(m)+totwo(s);
+		//字符串，console.log(time)是个字符串，所以我们可以取下标。
+		for(var i = 0;i<imgs.length;i++){
+			imgs[i].src ='imgage/'+time[i]+'.jpg';
+		}//初始化
+		fn();
+		function fn(){
+			var date = new Date();
+			var h = date.getHours();
+			var m = date.getMinutes();
+			var s = date.getSeconds();
+			var time = totwo(h)+totwo(m)+totwo(s);
+			//字符串，console.log(time)是个字符串，所以我们可以取下标。
+			fn1(5);
+			if(time[5] == 0){
+				fn1(4);//判断s的十位
+			}
+			if(totwo[s] == '00'){
+				fn1(3);//判断m的个位
+			}
+			if(totwo[s] == '00'&& time[3] == 0){
+				fn1(2);//判断m的十位
+			}
+			if(totwo[s] == '00'&& totwo[m] == '00'){
+				fn1(1);//判断h的个位
+			}
+			//传参，翻转，改变图片的宽度。
+			function fn1(t){
+				//让div的宽度为0
+				mTween(divs[t],'width',0,300,'linear',function(){
+					//更换图片。
+					divs[t].getElementsByTagName('img')[0].src = 'imgage/'+time[t]+'.jpg';
+					mTween(divs[t],'width',50,300,'linear')//再让图片的宽度回到最终的值。
+				})
+			}
+		}
+		setInterval(function(){
+			fn();
+			setTimeout(function(){
+				for(var i = 0;i<Imgs.length;i++){
+					Imgs[i].src = 'imgage/b.jpg';
+				}
+			},500)//隔500毫秒换张图片。
+			for(var i = 0;i<Imgs.length;i++){
+				Imgs[i].src = 'imgage/c.jpg';
+			}
+		},1000)
+		
+		function totwo(n){
+			return n<10? '0'+n:''+n;//三元运算判断。
+		}
+	</script>
+</html>
