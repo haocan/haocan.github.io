@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	td{
+		text-align: center;
+	}
+	a{
+		padding: 0 5px;
+	}
+	/* tbody tr:nth-child(even){
+		background-color: red;
+	}
+	tbody tr:nth-child(2n+1){
+		background-color: pink;
+	} */
+	</style>
+	<script type="text/javascript">
+	var datas = [
+            {
+                id: 1,
+                username: '刘伟',
+                age: 36,
+                sex: '男'
+            },
+            {
+                id: 2,
+                username: '多多',
+                age: 17,
+                sex: '男'
+            },
+            {
+                id: 3,
+                username: '隔壁老王',
+                age: 17,
+                sex: '男'
+            },
+            {
+                id: 4,
+                username: '莫莫',
+                age: 26,
+                sex: '男'
+            }
+        ];
+	</script>
+</head>
+<body>
+	 姓名:<input type="text" />
+    年龄:<input type="text" />
+    性别:<input type="text" />
+    <button>提交</button>
+    <br>
+    <br>
+
+	排序：
+	<select name="" id="">
+		<option value="编号">编号</option>
+		<option value="年龄">年龄</option>
+	</select>
+	<select name="" id="">
+		<option value="降序">降序</option>
+		<option value="升序">升序</option>
+	</select>
+	<button>提交</button>
+    <br><br>
+
+    搜索：
+    <input type="text">
+    <button>提交</button>
+    <br>
+    <br>
+	<input type="button" id="btn" value="反选">
+	<input type="button" value="批量删除" id="remove">
+    <table width="100%" border="1" id="tab">
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="checkAll">全选</th>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+	<script type="text/javascript">
+		var tab = document.getElementById('tab');
+		var tbody = tab.tBodies[0];
+		var all = document.getElementById('checkAll');
+		var checkboxs = tbody.getElementsByTagName('input');
+		var tr = tbody.getElementsByTagName('tr');
+		var btn = document.getElementById('btn');
+		var remove = document.getElementById('remove');
+		var inps = document.getElementsByTagName('input');
+		var btns = document.getElementsByTagName('button');
+		var sel = document.getElementsByTagName('select');
+		console.log(sel[0].value)
+		var dataLen = datas.length;
+		//模糊查找
+		btns[2].onclick = function(){
+			//隔行变色
+			colorChage(tr);
+			//查找高亮
+			for(var i=0;i<tr.length;i++){	
+				if(tr[i].innerHTML.indexOf(inps[3].value)!=-1){
+					tr[i].style.background = 'orange';
+				}else{
+					if(!checkboxs[i].checked)continue;
+					tr[i].style.background = 'yellow';
+				}
+			}
+		};
+			
+
+		//排序
+
+		btns[1].onclick = function(){
+			var eles = [].slice.call(tr);
+			//console.log(eles)
+			var index;
+			if(sel[0].value == '编号'){
+				index = 1;
+			}else{
+				index = 3;
+			}
+			eles.sort(function(a,b){
+				a = a.children[index].innerHTML;
+				b = b.children[index].innerHTML;
+
+				if(sel[1].value == '升序'){
+					return a - b;
+				}else{
+					return b - a;
+				}
+			});
+
+			for(var i=0;i<eles.length;i++){
+				tbody.appendChild(eles[i]);
+			}
+
+			
+		};
+		//添加数据
+		btns[0].onclick = function(){
+			for(var i=0;i<3;i++){
+				if(inps[i].value == ''){
+					return;
+				}
+			}
+			//创建数据
+			var obj = {
+				id:++dataLen,
+				username:inps[0].value,
+				age:inps[1].value,
+				sex:inps[2].value
+			};
+			//把数据存起来
+			datas.push(obj);
+			//显示数据
+			createRow([obj]);
+			//隔行变色
+			colorChage(tr);
+			//取消全选。
+			all.checked = false;
+		};
+		//批量删除
+		remove.onclick = function(){
+			for(var i=0;i<checkboxs.length;i++){
+				if(checkboxs[i].checked){
+					//删除对应的数据
+					removeData(tr[i].children[1].innerHTML);
+					tbody.removeChild(tr[i]);
+
+					i--;
+
+				}
+			}
+			if(tr.length==0){
+				all.checked = false;
+			}
+			colorChage(tr);
+		};
+		//反选
+		btn.onclick = function(){
+			for(var i=0;i<checkboxs.length;i++){
+				checkboxs[i].checked =! checkboxs[i].checked;
+				checkboxs[i].onchange();
+			}
+
+		}; 
+		//全选。
+		all.onchange = function(){
+			for(var i=0;i<checkboxs.length;i++){
+				checkboxs[i].checked = this.checked;
+				if(this.checked){
+					tr[i].style.background = 'yellow';
+				}else{
+					colorChage(tr);
+				}
+
+			}
+			
+		}
+		//隔行变色
+		function colorChage(tr){
+
+			for(var i=0;i<tr.length;i++){	
+				if(checkboxs[i].checked){
+					continue;
+				}
+				if(i%2==0){
+					tr[i].style.background = 'pink';
+				}else{
+					tr[i].style.background = '#ccc';
+				}
+			}
+		}
+		createRow(datas);
+		colorChage(tr);
+		//创建行
+		function createRow(data){
+			for(var i=0;i<data.length;i++){
+				var row = document.createElement('tr');
+				createCell(data[i],row)
+
+				tbody.appendChild(row);
+			}
+
+		}
+		//创建单元格。
+		function createCell(data,row){
+			var td = document.createElement('td');
+			var checkbox = document.createElement('input');
+			checkbox.type = "checkbox";
+			td.appendChild(checkbox);
+			//在checkbox的状态发生变化时，看一下是否都全选了。
+			checkbox.onchange = function(){
+				if(this.checked){
+					row.style.background = 'yellow';
+				}else{
+					row.style.background = '';
+				}
+				all.checked = isCheckAll();
+				colorChage(tr);
+			};
+			row.appendChild(td);
+			//根据数据生成td；
+			for(var attr in data){
+				td = document.createElement('td');
+				td.innerHTML = data[attr];
+				row.appendChild(td);
+			}
+			td = document.createElement('td');
+			var upper = document.createElement('a');
+			var down = document.createElement('a');
+			var remove = document.createElement('a');
+			upper.href = down.href =remove.href = "javascript:;";
+			upper.innerHTML = '上移';
+			down.innerHTML = '下移';
+			remove.innerHTML = '删除';
+
+			upper.onclick = function(){
+				if(row.previousElementSibling){
+					tbody.insertBefore(row,row.previousElementSibling);
+				}else{
+					alert('已经是老大了');
+				}
+				colorChage(tr);
+			};
+			down.onclick = function(){
+				if(row.nextElementSibling){
+					tbody.insertBefore(row.nextElementSibling,row);
+				}else{
+					alert('已经是老幺了');
+				}
+				colorChage(tr);
+			};
+			remove.onclick = function(){
+				tbody.removeChild(row);
+				//删除对应的数据
+				removeData(data.id);
+				
+				colorChage(tr);
+				checkbox.onchange();
+				if(checkboxs.length == 0){
+					all.checked = false;
+				}
+			};
+			td.appendChild(upper);
+			td.appendChild(down);
+			td.appendChild(remove);
+			row.appendChild(td);
+			tbody.appendChild(row);
+		}
+
+		//判断是否都选中了。
+		function isCheckAll(){
+			for(var i=0;i<checkboxs.length;i++){
+				if(!checkboxs[i].checked){
+					return false;
+				}
+			}
+			return true;
+		}
+		function removeData(id){
+			for(var i=0;i<datas.length;i++){
+				if(datas[i].id == id){
+					datas.splice(i,1);
+				}
+			}
+		}
+	</script>
+</body>
+</html>

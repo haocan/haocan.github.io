@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#files{
+		width: 600px;
+	}
+	#files>div{
+		float: left;
+		width: 150px;
+		height: 150px;
+		margin: 10px;
+		text-align: center;
+	}
+	#files input{
+		display: block;
+	}
+	#files input[type="text"]{
+		display: none;
+	}
+	#files img{
+		width: 80px;
+		height: 80px;
+	}
+	</style>
+</head>
+<body>
+	<a href="javascript:;" id="create">新建文件夹</a>
+	<a href="javascript:;" id="delete">删除文件夹</a>
+	<a href="javascript:;" id="back">返回上一层</a>
+	<div id="files">
+		<!-- <div>
+			<input type="checkbox">
+			<img src="images/folder.gif" >
+			<p>
+				<input type="text">
+				<span>老王的写真专辑</span>
+			</p>
+		</div>
+		<div>
+			<input type="checkbox">
+			<img src="images/folder.gif" >
+			<p>
+				<input type="text">
+				<span>志鹏的学习资料</span>
+			</p>
+		</div>
+		<div>
+			<input type="checkbox">
+			<img src="images/wma.png" >
+			<p>
+				<input type="text">
+				<span>莫莫-狼吼</span>
+			</p>
+		</div>
+		<div>
+			<input type="checkbox">
+			<img src="images/wma.png" >
+			<p>
+				<input type="text">
+				<span>莫莫-狼吼</span>
+			</p>
+		</div>
+		<div>
+			<input type="checkbox">
+			<img src="images/css.png" >
+			<p>
+				<input type="text">
+				<span>index.css</span>
+			</p>
+		</div>
+		<div>
+			<input type="checkbox">
+			<img src="images/html.png" >
+			<p>
+				<input type="text">
+				<span>我的第一个页面.html</span>
+			</p>
+		</div>
+		<div>
+			<input type="checkbox">
+			<img src="images/txt.png" >
+			<p>
+				<input type="text">
+				<span>leo减肥计划书.txt</span>
+			</p>
+		</div> -->
+	</div>
+	<script type="text/javascript">
+	var filesData = [
+		{	
+			id:1,
+			pId:0,
+			type:"txt",
+			text:"leo减肥计划书.txt"
+		},
+		{
+			id:2,
+			pId:5,
+			type:"folder",
+			text:"志鹏的学习资料"
+		},
+		{
+			id:3,
+			pId:5,
+			type:"folder",
+			text:"老王的写真专辑"
+		},
+		{
+			id:4,
+			pId:5,
+			type:"folder",
+			text:"莫莫新专辑"
+		},
+		{
+			id:5,
+			pId:0,
+			type:"folder",
+			text:"妙味课堂讲师资料节选"
+		}
+	];
+	var files = document.getElementById('files');
+	var divs = document.querySelectorAll('#files>div');
+	var as = document.getElementsByTagName('a');
+	//goback保存的是id。
+	var goback = 0;
+	var len = filesData.length;
+	as[0].onclick = function(){
+		//
+		var file = {
+			id:++len,
+			pId:goback,
+			type:"folder",
+			text:"新建文件夹"
+		};
+		filesData.push(file);
+		renderList(getChildren(goback));
+		console.log(goback)
+		var text = inId(file.id);
+//		var inp = text.getElementsByTagName('input');
+		
+	};
+	as[2].onclick = function(){
+		//console.log(goback);
+		//info保存的是对象
+		var info = getInfo(goback);//根据id找到对象。
+		 //console.log(info)
+		if(!info)return;
+		var pid = info.pId;//获取pid
+		//console.log(pid)
+		goback = pid;//保存这个对象的pid就相当于保存他爹的id。
+		//根据pid生成内容。
+		//console.log(pid)//0 
+		//在去根据pid去生成数据
+		renderList(getChildren(pid));
+	};
+
+	function inId(id){
+		for(var i=0;i<divs.length;i++){
+			if(divs[i].d == id){
+				return divs[i].getElementsByTagName('p')[0];
+			}
+		}
+	}
+	function getInfo(id){
+		//根据id找到对应的对象。
+		for(var i=0;i<filesData.length;i++){
+			if(filesData[i].id == id){
+				return filesData[i];
+			}
+		}
+	}
+	// console.log(getChildren(0));
+	renderList(getChildren(0));
+	function getChildren(pid){
+		var data = [];
+		//根据pid找到所有同级的。
+		for(var i=0;i<filesData.length;i++){
+			if(filesData[i].pId == pid){
+				data.push(filesData[i]);
+			}
+		}
+		return data;
+	}
+	//根据传入的数据创建文件。
+	function renderList(data){
+
+		/*
+			<div>
+				<input type="checkbox">
+				<img src="images/wma.png" >
+				<p>
+					<input type="text">
+					<span>莫莫-狼吼</span>
+				</p>
+			</div>
+
+		*/
+		files.innerHTML = '';
+		// data[0]&&(goback = data[0].pId);
+		for(var i=0;i<data.length;i++){
+			var file = document.createElement('div');
+			//创建文件元素，绑定pid和id。
+
+			file.pid = data[i].pId;
+			file.d = data[i].id;
+			file.type = data[i].type;
+			file.ondblclick = click;
+			file.innerHTML = `
+				<input type="checkbox">
+				<img src="images/${data[i].type}.png" >
+				<p>
+					<input type="text">
+					<span>${data[i].text}</span>
+				</p>
+
+			`;
+			files.appendChild(file);
+		}
+	}
+	function click(){
+		switch(this.type){
+			case "folder":
+				// console.log(this.pid);
+				// console.log(this.d)
+				goback = this.d;
+				renderList(getChildren(this.d));
+			break;
+			case "css":
+			break;
+			case "txt":
+			break;
+			case "html":
+			break;
+			case "js":
+			break;
+			case "wma":
+			break;
+		}
+	}
+	</script>
+</body>
+</html>
