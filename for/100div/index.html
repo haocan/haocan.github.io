@@ -5,12 +5,12 @@
 		<title></title>
 		<style>
 			div{
-				width: 100px;
-				height: 100px;
+				width: 50px;
+				height: 50px;
 				border: 1px solid #000;
 				font-size: 20px;
 				color: #000;
-				line-height: 100px;
+				line-height: 50px;
 				text-align: center;
 				position: absolute;
 				left: 0;
@@ -32,7 +32,7 @@
 	
 				}
 					for(var i=0;i<divs.length;i++){
-						Lvalue+=110;
+						Lvalue+=60;
 						if(i % 10 == 0){
 							Lvalue=0;
 						}
@@ -41,7 +41,7 @@
 					for(var i=0;i<divs.length;i++){
 						if(i%10==0){
 							if(i !=0){
-								Tvalue+=110;//i!=0就是为了让第一个div的top值为0.就只是刨去了第一个div；
+								Tvalue+=60;//i!=0就是为了让第一个div的top值为0.就只是刨去了第一个div；
 							}
 						}
 						divs[i].style.top=Tvalue+'px';

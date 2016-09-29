@@ -1,50 +1,60 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style type="text/css">
-		span{
-			font-size: 80px;
-			cursor: pointer;
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			a{
+				text-decoration: none;
+				font-size: 100px;
+				color: #000;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="javascript:;">★</a>
+		<a href="javascript:;">★</a>
+		<a href="javascript:;">★</a>
+		<a href="javascript:;">★</a>
+		<a href="javascript:;">★</a>
+	</body>
+	<script>
+		function get(TagName){
+			return document.getElementsByTagName(TagName);
 		}
-	</style>
-</head>
-<body>
-	<span>★</span>
-	<span>★</span>
-	<span>★</span>
-	<span>★</span>
-	<span>★</span>
-
-	<script type="text/javascript">
-		var spans = document.getElementsByTagName('span');
-		var pos;
-		for(var i=0;i<spans.length;i++){
-			spans[i].index = i;
-			spans[i].onmouseover = function(){
-
+		var as=get('a');
+		var num;
+		for(var i=0;i<as.length;i++){
+			as[i].index=i;
+			as[i].onmouseover=function(){
+				for (var i=0;i<as.length;i++) {
+					as[i].style.color= '';
+				}
 				if(this.index<2){
-					for(var i=0;i<=this.index;i++){
-						spans[i].style.color = 'red';	
-					}
+					fn(this.index,'pink');
 				}else{
-					for(var i=0;i<=this.index;i++){
-						spans[i].style.color = 'yellow';	
+					fn(this.index,'yellow');
+				}
+				
+			};
+			as[i].onmouseout=function(){
+				fn(as.length-1,'');
+				if (num!=null) {
+					if(num<2){
+						fn(num,'pink');
+					}else{
+						fn(num,'yellow');
 					}
 				}
 			};
-			spans[i].onmouseout = function(){
-				for(var i=0;i<spans.length;i++){
-					spans[i].style.color = '';
-				}
+			as[i].onclick=function(){
+				num=this.index;
+			};
+		}
+		function fn(n,c){
+			for(var i=0;i<=n;i++){
+				as[i].style.color= c;
 			}
 		}
-//		function changeColor(n,color){
-//			for(var i=0;i<=n;i++){
-//				spans[i].style.color = color;	
-//			}
-//		}
 	</script>
-</body>
 </html>

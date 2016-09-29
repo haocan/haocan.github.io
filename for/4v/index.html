@@ -5,15 +5,15 @@
 		<title></title>
 		<style>
 			div{
-				width: 100px;
-				height: 100px;
+				width: 50px;
+				height: 50px;
 				border: 1px solid #000;
 				background: red;
 				position: absolute;
 				left: 0;
 				top: 0;
 				color: #fff;
-				line-height: 100px;
+				line-height: 50px;
 				text-align: center;
 				font-size: 20px;
 			}
@@ -42,21 +42,21 @@
 			var divs=document.getElementsByTagName('div');
 			var num = num;
 			var min = 0;
-			var topValue= (num - 1) /2 *100 +30 ;
+			var topValue= (num - 1) /2 *50 +30 ;
 			for(var i=0;i<num;i++){
 				document.body.innerHTML+='<div>'+i+'</div>';
 			}
 			for(var i=0;i<divs.length;i++){
-				divs[i].style.left=i*100+'px';
+				divs[i].style.left=i*50+'px';
 			}
 			for(var i=0;i<divs.length;i++){
 				min = (num - 1)/2;
 				if(i > min){
-					topValue += 100;
+					topValue += 50;
 					divs[i].style.top=topValue+'px';
 				}else{
 					if(i != 0){
-						topValue-=100;
+						topValue-=50;
 					}
 					divs[i].style.top=topValue+'px';
 				}
@@ -71,16 +71,16 @@
 				document.body.innerHTML+='<div>'+i+'</div>';
 			}
 			for(var i=0;i<divs.length;i++){
-				divs[i].style.left=i*100+'px';
+				divs[i].style.left=i*50+'px';
 			}
 			for(var i=0;i<divs.length;i++){
 				min = (num - 1)/2;
 				if(i > min){
-					topValue -= 100;
+					topValue -= 50;
 					divs[i].style.top=topValue+'px';
 				}else{
 					if(i != 0){
-						topValue+=100;
+						topValue+=50;
 					}
 					divs[i].style.top=topValue+'px';
 				}
@@ -91,23 +91,23 @@
 			var num = num;
 			var min = 0;
 			var topValue=30;
-			var leftValue = (num - 1) / 2 * 100 + 100;
+			var leftValue = (num - 1) / 2 * 50 + 100;
 			for(var i=0;i<num;i++){
 				document.body.innerHTML+='<div>'+i+'</div>';
 			}
 			for(var i=0;i<divs.length;i++){
 				min = (num - 1) /2;
 				if(i <= min){
-					leftValue -= 100;
+					leftValue -= 50;
 					divs[i].style.left=leftValue+'px';
 				}else{
-					leftValue += 100;
+					leftValue += 50;
 					divs[i].style.left=leftValue+'px';
 				}
 				
 			}
 			for(var i=0;i<divs.length;i++){
-				divs[i].style.top=i*100+30+'px';
+				divs[i].style.top=i*50+30+'px';
 			}
 		}
 		function toRight(num){
@@ -115,23 +115,23 @@
 			var num = num;
 			var min = 0;
 			var topValue=30;
-			var leftValue = -100;
+			var leftValue = -50;
 			for(var i=0;i<num;i++){
 				document.body.innerHTML+='<div>'+i+'</div>';
 			}
 			for(var i=0;i<divs.length;i++){
 				min = (num - 1) /2;
 				if(i <= min){
-					leftValue += 100;
+					leftValue += 50;
 					divs[i].style.left=leftValue+'px';
 				}else{
-					leftValue -= 100;
+					leftValue -= 50;
 					divs[i].style.left=leftValue+'px';
 				}
 				
 			}
 			for(var i=0;i<divs.length;i++){
-				divs[i].style.top=i*100+30+'px';
+				divs[i].style.top=i*50+30+'px';
 			}
 			
 		}
