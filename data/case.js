@@ -41,47 +41,47 @@ var casees = [
 				{
 					caseTitle:"生成100个div",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/100div.gif",
 					caseDescription:"描述：用for循环自动生成100个div，不同的颜色，取模的熟练使用"
 					,caseWebsite:"haocan.github.io/for/100div"
 				},
 				{
 					caseTitle:"自动改变v字方向",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"http://jquery.com/jquery-wp-content/themes/jquery.com/i/try-jquery.jpg",
+					caseThumbnail:"images/case/1/4v.gif",
 					caseDescription:"描述：生成4个方向的v自省，确定好top值和left值"
 					,caseWebsite:"haocan.github.io/for/4v"
 				},
 				{
 					caseTitle:"图片擦擦擦",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"http://image72.360doc.com/DownloadImg/2014/05/2605/42035151_6.jpg",
+					caseThumbnail:"images/case/1/ca.gif",
 					caseDescription:"把每个图片分成若干个，给每个图片定位，图片move时显示"
 					,caseWebsite:"haocan.github.io/for/caca"
 				},
 				{
 					caseTitle:"多图切换",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"http://jquerymobile.com/resources/devices.png",
+					caseThumbnail:"images/case/1/change.gif",
 					caseDescription:"上一组和下一组是控制两组照片的，可以用传参去写"
 					,caseWebsite:"haocan.github.io/for/change"
 				},{
 					caseTitle:"QQ列表",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"https://avatars1.githubusercontent.com/u/6025224?v=3&s=400",
+					caseThumbnail:"images/case/1/qq.gif",
 					caseDescription:"点击展开，再次点击关闭，如果当前点击的和上一次点击的不是同一个，上一次点击的自动关闭，做判断"
 					,caseWebsite:"haocan.github.io/for/qqlist"
 				},
 				{
 					caseTitle:"评分",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/pingfen.gif",
 					caseDescription:"判断当前移入的是第几个，记入索引值做判断"
 					,caseWebsite:"haocan.github.io/for/grade"
 				},{
 					caseTitle:"全选",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/check.gif",
 					caseDescription:"隔行变色，都选中时全选按钮自动勾选，全选按钮勾选所有都会被选中，判断当前没被选中的"
 					,caseWebsite:"haocan.github.io/for/checked"
 				}
