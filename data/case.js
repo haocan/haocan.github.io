@@ -92,7 +92,7 @@ var casees = [
 				{
 					caseTitle:"修改文本框的值",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/编辑.gif",
 					caseDescription:"用传参，如果值改变保存后就是改变的值，取消值还会恢复之前的"
 					,caseWebsite:"haocan.github.io/type/amend"
 
@@ -100,15 +100,15 @@ var casees = [
 				{
 					caseTitle:"传参div",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
-					caseDescription:"用传参做div更简单"
+					caseThumbnail:"images/case/1/传参.gif",
+					caseDescription:"用传参，数据可以随便增减，任意的颜色"
 					,caseWebsite:"haocan.github.io/type/div"
 
 				},
 				{
 					caseTitle:"商品计价",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/商品计价.gif",
 					caseDescription:"商品计价需注意数据的获取和更改，不能让用户随意更改"
 					,caseWebsite:"haocan.github.io/type/price"
 
@@ -116,7 +116,7 @@ var casees = [
 				{
 					caseTitle:"选择卡嵌套",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/选项卡.gif",
 					caseDescription:"样式自动生成，多层选择卡的嵌套，先写好一个li的js然后传参"
 					,caseWebsite:"haocan.github.io/type/Tab"
 
@@ -132,7 +132,7 @@ var casees = [
 				{
 					caseTitle:"搜狐",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/搜狐.gif",
 					caseDescription:"熟练应用传参"
 					,caseWebsite:"haocan.github.io/type/souhu"
 
@@ -140,7 +140,7 @@ var casees = [
 				{
 					caseTitle:"缩略图",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/缩略.gif",
 					caseDescription:"常见效果图，移入时对应图片的缩略图也会显示"
 					,caseWebsite:"haocan.github.io/type/brevi"
 
