@@ -153,49 +153,49 @@ var casees = [
 				{
 					caseTitle:"时钟翻转",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/时钟翻转.gif",
 					caseDescription:"定时器的应用，获取本机时间。日期对象"
 					,caseWebsite:"haocan.github.io/timer/turn"
 				},
 				{
 					caseTitle:"时钟滑动",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/时钟滑动.gif",
 					caseDescription:"定时器的应用，获取本机时间。日期对象"
 					,caseWebsite:"haocan.github.io/timer/slide"
 				},
 				{
 					caseTitle:"仿window日历",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/日历.gif",
 					caseDescription:"浏览器可以被认为浏览器可以被认为浏览器可以被认为浏览器可以被认浏览器可以被认为浏览器可以被认为浏览器可以被认为浏览器可以被认浏览器可以被认为浏览器可以被认为浏览器可以被认为浏览器可以被认浏览器可以被认为浏览器可以被认为浏览器可以被认为浏览器可以被认浏览器可以被认为浏览器可以被认为浏览器可以被认为浏览器可以被认浏览器可以被认为浏览器可以被认为浏览器可以被认为浏览器可以被认 为浏览器可以被认为浏览器可以被认为浏览器可以被认为浏览器可以被认为浏览器可 以被认为浏览器可以被认为浏览器可以被认为浏览器可以被认为浏览器可以被认为 浏览器可以被认为浏览器可以被认为"
 					,caseWebsite:"haocan.github.io/timer/solar"
 				},
 				{
 					caseTitle:"淘宝",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/淘宝.gif",
 					caseDescription:"循环播放，注意播放顺序"
 					,caseWebsite:"haocan.github.io/timer/taobao"
 				},
 				{
 					caseTitle:"随意掉落div",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/任意掉落.gif",
 					caseDescription:"点击任意一个掉落"
 					,caseWebsite:"haocan.github.io/timer/sydl"
 				},
 				{
-					caseTitle:"随机排序",
+					caseTitle:"顺序播放",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/顺序播放.gif",
 					caseDescription:"从大到小，打乱顺序"
 					,caseWebsite:"haocan.github.io/timer/sort"
 				},
 				{
 					caseTitle:"随机播放",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/随机播放.gif",
 					caseDescription:"递归，时间随机"
 					,caseWebsite:"haocan.github.io/timer/random"
 				},
@@ -209,21 +209,21 @@ var casees = [
 				{
 					caseTitle:"掉落div",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/滑动div.gif",
 					caseDescription:"注意防止多次点击"
 					,caseWebsite:"haocan.github.io/timer/dropdiv"
 				},
 				{
 					caseTitle:"带详情的轮播",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/带详情的轮播.gif",
 					caseDescription:"运动函数的多次嵌套"
 					,caseWebsite:"haocan.github.io/timer/detailspic"
 				},
 				{
 					caseTitle:"延时的菜单",
 					publishTime:"2011-11-16 22:08",
-					caseThumbnail:"images/icon/exp.png",
+					caseThumbnail:"images/case/1/延时.gif",
 					caseDescription:"延时定时器的熟练掌握"
 					,caseWebsite:"haocan.github.io/timer/delyed"
 				}
