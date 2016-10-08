@@ -16,18 +16,18 @@ var projects = [
 		{
 			projectName:"页面点击切换、移入移出、音乐播放器",
 			projectWebsite:"haocan.github.io/work",
-		    startTime:"2016.01.01",
+		    startTime:"2015.09.01",
 			endTime:"至今",
 			projectExplain:"页面点击切换、移入移出、音乐播放器、自定义滚动条，移入列表动画，vedio移入时根据移入方向显示透明层，播放器切歌，一张一张替换图片",
 			projectLabel:["html","css3","css","js"],
 			projectThumbnail:"images/icon/1.png"
 		},
 		{
-			projectName:"妙味VIP会员感恩墙",
-			projectWebsite:"http://v.miaov.com/thanks/",
-		    startTime:"2016.01.01",
+			projectName:"滑屏效果",
+			projectWebsite:"haocan.github.io/work1",
+		    startTime:"2015.09.01",
 			endTime:"至今",
-			projectExplain:"用户观看视频的主页面，其大部分内容是通过JS加载的。为了提高性能，采用了延迟加载、延迟渲染、事件代理等优化方式。此外，还通过监听页面的window.onerror事件对异常信息进行采集，以便及时发现和排查故障。",
+			projectExplain:"滚轮事件，分为4块，轮播图，淡入淡出，放大缩小",
 			projectLabel:["html","css3","css","js"],
 			projectThumbnail:"images/icon/project-2.png"
 		}
