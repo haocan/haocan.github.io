@@ -29,6 +29,6 @@ var projects = [
 			endTime:"至今",
 			projectExplain:"滚轮事件，分为4块，轮播图，淡入淡出，放大缩小",
 			projectLabel:["html","css3","css","js"],
-			projectThumbnail:"images/icon/project-2.png"
+			projectThumbnail:"images/icon/project-2.jpg"
 		}
 ]
