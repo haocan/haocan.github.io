@@ -25,11 +25,11 @@ var userInfo = {
     jobWant:  "WEB前端开发工程师",
     userQQ:  "1573636504",
     userEmail:   "1573636504@qq.com",
-    motto:  "置气和悲伤的源头都在于自己，你不听不闻不看，选择权在你置气和悲伤的源头都在于自己，你不听不闻不看，选择权在你置气和悲伤的源头都在于自己，你不听不闻不看，选择权在你置气和悲伤的源头都在于自己，你不听不闻不看，选择权在你", 
+    motto:  "做一个云水禅心的人，在纷繁的尘世中，承受花开的美丽，承受凋零的凄凉", 
     userPhone: 15512851217,
     userOrignPlace:  "河北省邢台地区南宫市" ,
     userSeatPlace:  "北京市",
-    userWeibo: "<a href='https://haocan.github.io/index' target='_blank'>1111111111111</a>",
+    userWeibo: "<a href='https://haocan.github.io/index' target='_blank'>haocan.github.io</a>",
     userAssessment: "有互联网工作经验,熟练掌握html,css和js",   
     userHobby: ["运动","游戏","电影"],
 }
