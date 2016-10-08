@@ -14,11 +14,11 @@
 
 var projects = [
 		{
-			projectName:"整屏切换+动画制作“TweenMax库”",
-			projectWebsite:"http://2013.miaov.com/miaov_demo/diagnosite/",
+			projectName:"页面点击切换、移入移出、音乐播放器",
+			projectWebsite:"haocan.github.io/work",
 		    startTime:"2016.01.01",
 			endTime:"至今",
-			projectExplain:"JS整站开发之：整屏切换+动画制作神器“TweenMax库” 导航条和首屏出场动画、3D翻转实现、整屏切换，页面动画计算滚动条滚动距离， 拖动滚动条触发页面动画，完善每一屏内的图片翻转，缩小浏览器，做布局转换。",
+			projectExplain:"页面点击切换、移入移出、音乐播放器” “自定义滚动条，移入列表动画，vedio移入时根据移入方向显示透明层，播放器切歌，一张一张替换图片”,
 			projectLabel:["html","css3","css","js"],
 			projectThumbnail:"images/icon/1.png"
 		},
