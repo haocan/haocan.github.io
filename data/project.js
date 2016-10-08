@@ -18,7 +18,7 @@ var projects = [
 			projectWebsite:"haocan.github.io/work",
 		    startTime:"2016.01.01",
 			endTime:"至今",
-			projectExplain:"页面点击切换、移入移出、音乐播放器” “自定义滚动条，移入列表动画，vedio移入时根据移入方向显示透明层，播放器切歌，一张一张替换图片”,
+			projectExplain:"页面点击切换、移入移出、音乐播放器、自定义滚动条，移入列表动画，vedio移入时根据移入方向显示透明层，播放器切歌，一张一张替换图片",
 			projectLabel:["html","css3","css","js"],
 			projectThumbnail:"images/icon/1.png"
 		},
