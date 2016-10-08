@@ -30,11 +30,10 @@ var skills = {
 		},
 		{
 			skillLanguage:"CSS3",
-			percent:"90%",
+			percent:"70%",
 			skillTooltip:[
 				"掌握浮动及文档流特性",
 				"精通定位、浏览器兼容性",
-				"CSS3圆角阴影字体等样式有实际案例经验",
 				"移动端响应式"
 			]
 		},
@@ -42,29 +41,29 @@ var skills = {
 			skillLanguage:"javascript",
 			percent:"86%",
 			skillTooltip:[
-				"了解数据类型、作用域闭包等语言特性",
+				"了解数据类型、作用域等语言特性,对闭包有所了解",
 				"掌握定时器、数组字符串及递归、数组去重等",
 				"深入使用DOM\BOM\EVENT，能完成各类组件开发",
 				"掌握JS的数据调用、ajax实现机制、各类接口调用",
 				"掌握面向对象编程，对封装、继承、多态等均有了解",
-				"了解正则表达式，熟悉JS兼容性、JS性能提升"
+				"了解正则表达式，熟悉JS兼容性"
 			]
 		},
 		{
 			skillLanguage:"canvas",
-			percent:"40%",
+			percent:"30%",
 			skillTooltip:[
 				"能熟练使用相关接口绘制各类图形",
 				"能运用canvas开发小游戏",
-				"可封装小型图表等数据可视化技术解决方案"
 			]
 		},
 		{
 			skillLanguage:"jQuery",
-			percent:"60%",
+			percent:"50%",
 			skillTooltip:[
 				"移动端响应式",
 				"canvas游戏开发"
+				"动画效果有所应用"
 			]
 		}
 		
