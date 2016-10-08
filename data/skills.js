@@ -62,7 +62,7 @@ var skills = {
 			percent:"50%",
 			skillTooltip:[
 				"移动端响应式",
-				"canvas游戏开发"
+				"canvas游戏开发",
 				"动画效果有所应用"
 			]
 		}
