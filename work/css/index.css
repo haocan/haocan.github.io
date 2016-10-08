@@ -1,0 +1,328 @@
+body{
+	font-size: 12px;
+	color: #777777;
+	font-family: arial;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#box{
+	width: 100%;
+	height: 667px;
+	max-width: 1366px;
+	max-height: 667px;
+	margin: 0px auto;
+	position: relative;
+}
+/*菜单列表的样式*/
+#menu{
+	width: 230px;
+	height: 667px;
+	/*width: 0px;
+	height: 667px;*/
+	overflow: hidden;
+	/*position: absolute;
+	left: 0;
+	top: 0;*/
+	float: left;
+	border-right:10px solid #F06000;
+	position: relative;
+}
+#menu h1{
+	height: 130px;
+	position: relative;
+}
+#menu h1 a{
+	position: absolute;
+	left: 30px;
+	top: 40px;
+}
+/*课程视频列表*/
+#nav{
+	width: 210px;
+	position: relative;
+	left: 20px;
+	margin-bottom: 30px;
+}
+#nav li{
+	width: 210px;
+	position: relative;
+	height: 31px;
+	vertical-align: middle;
+}
+#nav  a{
+	width: 210px;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #000;
+	line-height: 30px;
+	text-indent: 14px;
+	z-index: 2;
+	opacity: .5;
+}
+#nav span{
+	width: 0;
+	height: 30px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #F28B24;
+	z-index: 1;
+}
+#nav strong{
+	font-weight: normal;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	top: 0;
+	right: 16px;
+	font-size: 11px;
+}
+#nav ul{
+	width: 210px;
+	position: absolute;
+	left: 210px;
+	top: -31px;
+	background: #F0907A;
+	overflow: hidden;
+	z-index: 12;
+}
+ /*音乐的样式*/
+#music{
+	position: relative;
+	width: 210px;
+	height: 30px;
+	margin-bottom: 12px;
+	left: 20px;
+}
+#music ul{
+	width: 210px;
+	height: 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #000100;
+}
+#music li{
+	width: 30px;
+	height: 30px;
+	float: left;
+	position: relative;
+	cursor: pointer;
+}
+#music p{
+	position: absolute;
+	top: -30px;
+	left: 0;
+	width: 210px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #F0AD4E;
+}
+#music .wrap{
+	width: 210px;
+	height: 30px;
+	overflow: hidden;
+	position: relative;
+}
+#music .music-al{
+	background: url(../img/music_a1.png) no-repeat center;
+}
+#music .music-bl{
+	background: url(../img/music_b1.png) no-repeat center;
+}
+#music .music-dl{
+	background: url(../img/music_d1.png) no-repeat center;
+}
+#music span{
+	display: block;
+	width: 30px;
+	height: 30px;
+	position: relative;
+	z-index: 2;
+}
+#music strong{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 30px;
+	height: 30px;
+	background: #C91743;	
+	opacity: 1;
+}
+#music .opcity{
+	opacity: 0;
+}
+#music .sound{
+	width: 50px;
+	height: 5px;
+}
+#music .sound div{
+	height: 3px;
+	position: absolute;
+	top: 13px;
+	left: 0;
+}
+#music .sound1{
+	width: 50%;
+	background: #F47500;
+	z-index: 2;
+}
+#music .sound2{
+	width: 100%;
+	background: #330033;
+	z-index: 1;
+}
+/*微博，qq样式设置*/
+
+#attention{
+	width: 84px;
+	height: 20px;
+	margin: 0 auto;
+}
+#attention li{
+	float: left;
+	width: 20px;
+	height: 20px;
+	margin-right: 8px;
+	display: inline;
+	position: relative;
+	cursor: pointer;
+}
+#attention span{
+	width: 86px;
+	height: 22px;
+	position: absolute;
+	top: 22px;
+	left: 0;
+	line-height: 26px;
+	text-align: center;
+	color: #000;
+	background: url(../img/attention_bg.png);
+	display: none;
+}
+#copy-right{
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	color: #03080E;
+	text-align: center;
+}
+#menu-hider{
+	width: 20px;
+	height: 30px;
+	font-size: 30px;
+	color: #fff;
+	line-height: 30px;
+	position: absolute;
+	top: 80px;
+	left: 240px;
+	/*left: 3px;*/
+	background: #F06000;
+	text-align: center;
+	z-index: 4;
+}
+/*音频列表*/
+#vedio-list{
+	float: left;
+	width: 1126px;
+	height: 667px;
+	/*width: 96%;
+	height: 100%;*/
+	background: #000;
+	position: relative;
+}
+#vedio-list ul{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+#vedio-list ul li{
+	width: 372px;
+	height: 227px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	cursor: pointer;
+}
+#vedio-list ul li img{
+	width: 100%;
+	height: 100%;
+	transition: .1s;
+	opacity: 1;
+}
+#vedio-list .info{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:227px;
+	left: 0px;
+	
+}
+#vedio-list strong{
+	 width: 50px;
+	 height: 50px;
+	 background: url(../img/play_gallery.png);
+	 position: absolute;
+	 left: 50%;
+	 top: 50%;
+	 margin: -25px 0 0 -25px;
+	 z-index: 2;
+}
+#vedio-list h2{
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	bottom: 20px;
+	color: #fff;
+	font-size: 18px;
+}
+#vedio-list span{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #F06000;
+	opacity: .5;
+}
+/*滚轮设置*/
+#bar{
+	width: 10px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #F1F1F1;
+	z-index: 2;
+}
+#bar a{
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #CD003F;
+}
+.prev{
+	width: 46px;
+	height: 46px;
+	position: absolute;
+	top: 300px;
+	margin-top: -23px;
+	z-index: 2;
+}
+#prev{
+	left: 20px;
+	background:#F43F07 url(../img/video_info_btn1.png) no-repeat center;
+}
+#next{
+	right: 40px;
+	background: #F43F07 url(../img/video_info_btn2.png) no-repeat center;
+}
