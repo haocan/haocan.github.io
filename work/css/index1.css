@@ -9,6 +9,74 @@ body{
 #box{
 	width: 100%;
 }
+/*视频加载*/
+#vedio-wrap{
+	width: 1366px;
+	height: 667px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 4;
+	display: none;
+}
+ #vedio-wrap .vedio-box{
+	width: 957px;
+	height: 667px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.vedio-box .close-btn{
+	width: 46px;
+	height: 46px;
+	position: absolute;
+	top: -2%;
+	right: 10%;
+	margin-top: 40px;
+	z-index: 2;
+	background: url(../img/video_info_close_btn.png) no-repeat center;
+}
+/*播放器的样式设置*/
+.vedio-box .flash{
+	width: 640px;
+	height: 455px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -225px 0 0 -320px;
+}
+#vedio-bg{
+	width: 100%;
+	height: 100%;
+	background: #000;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 3;
+	display: none;
+}
+/*info的样式设置*/
+#vedio-wrap .vedio-info{
+	width: 409px;
+	height: 667px;
+	background: #FFFFFF;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0 2%;
+	color: #C3A6C7;
+}
+#vedio-wrap h2{
+	font-size: 18px;
+	line-height: 60px;
+	border-bottom: 1px solid#D9D9D9;
+	padding-top: 20px;
+}
+#vedio-wrap p{
+	line-height: 24px;
+	padding-top: 10px;
+}
 /*菜单列表的样式*/
 #menu{
 	width: 230px;
@@ -17,6 +85,7 @@ body{
 	left: 0;
 	top: 0;
 	border-right:10px solid #F06000;
+	background: #000;
 }
 #menu h1{
 	height: 130px;
@@ -51,7 +120,7 @@ body{
 	position: absolute;
 	left: 0;
 	top: 0;
-	color: #000;
+	color: #fff;
 	line-height: 30px;
 	text-indent: 14px;
 	z-index: 2;
@@ -80,7 +149,7 @@ body{
 	position: absolute;
 	left: 210px;
 	top: -31px;
-	background: #F0907A;
+	background: #000;
 	overflow: hidden;
 	z-index: 4;
 }
@@ -100,9 +169,6 @@ body{
 	background: #F06000;
 	opacity: .4;
 	margin-top: 20px;
-}
-#music input:hover{
-	transform: rotateX(45deg) scale(1.2);
 }
 #music p{
 	text-align: center;
@@ -206,7 +272,7 @@ body{
 	position: absolute;
 	left: 0;
 	bottom: 20px;
-	color: #fff;
+	color: red;
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -217,7 +283,7 @@ body{
 	left: 0;
 	top: 0;
 	background: #000;
-	opacity: .7;
+	opacity: .5;
 }
 /*滚轮设置*/
 #bar{

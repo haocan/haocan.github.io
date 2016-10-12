@@ -36,6 +36,7 @@ window.onload = function(){
 	};
 	//歌曲数组
 	var audArr=['Faydee - Legendary','Jay Brannan','Michael Learns To Rock'];
+	
 		var audNum=0;
 		var audOnOff=true;
 		$('#music p')[0].innerHTML=audArr[audNum];
@@ -108,16 +109,15 @@ window.onload = function(){
 	];
 	var arrList = [
 	['XHTML+CSS2整站视频教程-1','XHTML+CSS2整站视频教程-2','XHTML+CSS2整站视频教程-3','XHTML+CSS2整站视频教程-4','XHTML+CSS2整站视频教程-5','XHTML+CSS2整站视频教程-6','9种焦点图拓展-上','9种焦点图拓展-下','瀑布流效果的实现-1','瀑布流效果的实现-2','瀑布流效果的实现-3','瀑布流效果的实现-4'],
-	['XHTML+CSS2整站视频教程-1','XHTML+CSS2整站视频教程-2','XHTML+CSS2整站视频教程-3','XHTML+CSS2整站视频教程-4','XHTML+CSS2整站视频教程-5','XHTML+CSS2整站视频教程-6','9种焦点图拓展-上','9种焦点图拓展-下','瀑布流效果的实现-1','瀑布流效果的实现-2','瀑布流效果的实现-3','瀑布流效果的实现-4'],
-	['XHTML+CSS2整站视频教程-1','XHTML+CSS2整站视频教程-2','XHTML+CSS2整站视频教程-3','XHTML+CSS2整站视频教程-4','XHTML+CSS2整站视频教程-5','XHTML+CSS2整站视频教程-6','9种焦点图拓展-上','9种焦点图拓展-下','瀑布流效果的实现-1','瀑布流效果的实现-2','瀑布流效果的实现-3','瀑布流效果的实现-4'],
-	['XHTML+CSS2整站视频教程-1','XHTML+CSS2整站视频教程-2','XHTML+CSS2整站视频教程-3','XHTML+CSS2整站视频教程-4','XHTML+CSS2整站视频教程-5','XHTML+CSS2整站视频教程-6','9种焦点图拓展-上','9种焦点图拓展-下','瀑布流效果的实现-1','瀑布流效果的实现-2','瀑布流效果的实现-3','瀑布流效果的实现-4'],
-	['XHTML+CSS2整站视频教程-1','XHTML+CSS2整站视频教程-2','XHTML+CSS2整站视频教程-3','XHTML+CSS2整站视频教程-4','XHTML+CSS2整站视频教程-5','XHTML+CSS2整站视频教程-6','9种焦点图拓展-上','9种焦点图拓展-下','瀑布流效果的实现-1','瀑布流效果的实现-2','瀑布流效果的实现-3','瀑布流效果的实现-4'],
-	['XHTML+CSS2整站视频教程-1','XHTML+CSS2整站视频教程-2','XHTML+CSS2整站视频教程-3','XHTML+CSS2整站视频教程-4','XHTML+CSS2整站视频教程-5','XHTML+CSS2整站视频教程-6','9种焦点图拓展-上','9种焦点图拓展-下','瀑布流效果的实现-1','瀑布流效果的实现-2','瀑布流效果的实现-3','瀑布流效果的实现-4'],
-	['XHTML+CSS2整站视频教程-1','XHTML+CSS2整站视频教程-2','XHTML+CSS2整站视频教程-3','XHTML+CSS2整站视频教程-4','XHTML+CSS2整站视频教程-5','XHTML+CSS2整站视频教程-6','9种焦点图拓展-上','9种焦点图拓展-下','瀑布流效果的实现-1','瀑布流效果的实现-2','瀑布流效果的实现-3','瀑布流效果的实现-4'],
-	['XHTML+CSS2整站视频教程-1','XHTML+CSS2整站视频教程-2','XHTML+CSS2整站视频教程-3','XHTML+CSS2整站视频教程-4','XHTML+CSS2整站视频教程-5','XHTML+CSS2整站视频教程-6','9种焦点图拓展-上','9种焦点图拓展-下','瀑布流效果的实现-1','瀑布流效果的实现-2','瀑布流效果的实现-3','瀑布流效果的实现-4']
+	['9种焦点图拓展-下','瀑布流效果的实现-1','瀑布流效果的实现-2','瀑布流效果的实现-3','瀑布流效果的实现-4','原生JS编写小蜜蜂游戏-1','原生JS编写小蜜蜂游戏-2','原生JS编写小蜜蜂游戏-3','jQuery编写推箱子游戏-1','Query编写推箱子游戏-2','Query编写推箱子游戏-3','Query编写推箱子游戏-4'],
+	['妙味课堂原首页经典弹窗效果-1','妙味课堂原首页经典弹窗效果-2','妙味课堂原首页经典弹窗效果-3','妙味课堂原首页经典弹窗效果-4','妙味课堂原首页经典弹窗效果-5','XHTML+CSS2整站视频教程-6','JS模块化开发-1','JS模块化开发-2','JS模块化开发-3','JS模块化开发-4','css3实现3D旋转轮播图-1','css3实现3D旋转轮播图-2'],
+	['css3实现3D旋转轮播图-3','css3实现3D旋转轮播图-4','css3实现3D翻转焦点图-1','css3实现3D翻转焦点图-2','css3实现3D翻转焦点图-3','HTML5拖拽购物车-1','HTML5拖拽购物车-2','HTML5拖拽购物车-3','HTML5拖拽购物车-4','HTML实现祖玛小游戏-1','HTML实现祖玛小游戏-2','HTML实现祖玛小游戏-3'],
+	['HTML5实现地理信息与本地存储-1','HTML5实现地理信息与本地存储-2','HTML5实现地理信息与本地存储-3','HTML5实现地理信息与本地存储-4','HTML5实现地理信息与本地存储-5','HTML5打造自定义播放器-1','HTML5打造自定义播放器-2','HTML5打造自定义播放器-3','HTML5打造自定义播放器-4','百叶窗效果','原韩雪冬官网图片切换','自适应屏幕宽度的轮播图'],
+	['JS实现的分页效果','JS实现的网页进度条','联动日历-1','联动日历-2','联动日历-3','联动下拉菜单','延迟菜单','多图片无缝切换','选中文字分享效果','微博登录suggest','微博发布框效果','瀑布流布局实例'],
+	['jQuery原创视频教程-1','jQuery原创视频教程-2','jQuery原创视频教程-3','DOM优化','快速排序','函数声明与表达式','操作iframe','枚举算法','事件委托','闭包','对象引用','JS中的跨域'],
+	['firebug工具使用','MVC系列-初探backbone-1','MVC系列-初探backbone-2','MVC系列-初探backbone-3','MVC系列-初探backbone-4','MVC系列-初探backbone-5','HTML-canvas基础-1','HTML-canvas基础-2','HTML-canvas基础-3','HTML-canvas基础-4','HTML-canvas基础-5','HTML历史管理']
 	
 	];
-	//console.log(arrImg[0].length)
 	//自动生成vedio列表的图片
 	var m = 0;
 	vedioImg(m);
@@ -138,7 +138,6 @@ window.onload = function(){
 				if(i!=0){
 					num++;
 				}
-				console.log(num)
 			}
 		Li[i].style.left=i%3*372+'px';
 		Li[i].style.top=num*227+'px';
@@ -163,10 +162,42 @@ window.onload = function(){
 				setTimeout(function(){
 					img[num].src = 'image/'+arrImg[m][num]+'.jpg';
 					img[num].style.opacity = 1;
-				},60)
-			},30)
-		},90)
+				},180)
+			},90)
+		},270)
 	};
+	//视频效果的js效果
+	var vedioArr = ['XNDQxNTEwMjU2','XNDU5MDMxOTQw','XNDU5NDk5MDI0','XNDU5OTQ3MTQw','XNDYwNzc4MTY4','XNDY1NDgwMjM2','XNDQxNTEwMjU2','XNDU5MDMxOTQw','XNDU5NDk5MDI0','XNDU5OTQ3MTQw','XNDQxNTEwMjU2','XNDU5MDMxOTQw']
+	vedio(m);
+	function vedio(n){
+		var vedio = document.getElementById('vedio');
+		var lis = vedio.getElementsByTagName('li');
+		var wrap = document.getElementById('vedio-wrap');
+		var bg = document.getElementById('vedio-bg');
+		var flash = document.getElementsByClassName('flash')[0];
+		var btn = document.getElementsByClassName('close-btn')[0];
+		var content = document.getElementsByClassName('info-content')[0];
+		var h2s = content.getElementsByTagName('h2');
+		//console.log(arrList[0].length)
+		for(var i = 0;i<arrList[0].length;i++){
+			lis[i].index = i;
+			lis[i].onclick = function(){
+				wrap.style.display = "block";
+				bg.style.display = "block";
+				h2s[0].innerHTML = arrList[n][this.index];
+				embed(this.index);	
+			};
+		}
+		btn.onclick = function(){
+			wrap.style.display = "none";
+			bg.style.display = "none";
+			flash.innerHTML = "";
+		};
+	};
+	//创建视频对象
+	function embed(n){	
+    	$('<embed allowFullScreen="true" id="embedid"  quality="high" width="620" height="500"  type="application/x-shockwave-flash" src="http://player.youku.com/player.php/sid/'+vedioArr[n]+'/v.swf"></embed>').appendTo('.flash');
+	};	
 	//滚轮的控制
 	bar();
 	function bar(){
@@ -181,7 +212,7 @@ window.onload = function(){
 		var maxY = vedio.clientHeight - a.offsetHeight;
 		//内容的最大范围
 		var innerMax = vedio.clientHeight - v.scrollHeight;
-		console.log(innerMax)// -241
+		//console.log(innerMax)// -241
 		//按下滚轮开始移动
 		a.onmousedown = function(ev){
 			var disy = ev.clientY - getPos(this).top;
@@ -354,6 +385,8 @@ window.onload = function(){
 			m++;
 			m%=arrImg.length;
 			cut(m);
+			vedio(m);
+			vedioImg(m);
 			move();
 		};
 		prev.onclick = function(){
@@ -363,6 +396,8 @@ window.onload = function(){
 			}
 			cut(m);
 			move();
+			vedio(m);
+			vedioImg(m)
 		};
 	}
 }
