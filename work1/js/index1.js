@@ -1,3 +1,6 @@
+$(function(){
+	window.scrollTo(0,0);
+});
 window.onload = function(){
 	fn();
 	function fn(){
@@ -45,29 +48,24 @@ window.onload = function(){
 			//做判断，第一个div
 			clear();
 			add(0)
+			mtween1();
 		}
 		if(Yoffset>a&&Yoffset<a+b){
+			mtween();
 			//做判断，第二个div
 			clear();
 			add(1)
 		}
 		if(Yoffset>a+b&&Yoffset<a+b+c){
+			mtween1();
 			clear();
 			add(2)
 		}
 		if(Yoffset>a+b+c&&Yoffset<a+b+c+d){
 			clear();
 			add(3)
+			mtween1();
 		}
-		
-		//当滚轮到e的位置时，about的内容以运动的方式显示出来
-		if(window.pageYOffset >=500){
-			mtween();
-		}
-	};
-	//console.log(window.pageYOffset)
-	if(window.pageYOffset >=500){
-		mtween();
 	};
 	//给li添加样式，给当前的添加
 	function add(index){
@@ -133,12 +131,42 @@ window.onload = function(){
     		$('b').fadeIn(600);
     		$('i').fadeIn(600);
     		//文字的运动方式
-    		mTween(words[i],'left',num,2000+i*100,'easeBoth');
+    		mTween(words[i],'left',num,1500+i*100,'easeBoth');
     		//雪碧图的运动方式
-    		mTween(bs[i],'left',num,1500+i*100,'easeBoth');
+    		mTween(bs[i],'left',num,1000+i*100,'easeBoth');
     		//年份的运动方式
-    		mTween(is[i],'left',num,2000+i*100,'easeBoth');
+    		mTween(is[i],'left',num,1500+i*100,'easeBoth');
     	}
+	};
+	$('.about').click(function(){
+		mtween1();
+	})
+	function mtween1(){
+		var words = document.querySelectorAll('.r .word');
+		var is = document.querySelectorAll('.r i');
+		var bs = document.querySelectorAll('.r b');
+		var w = document.querySelectorAll('.l .word');
+		var iss = document.querySelectorAll('.l i');
+		var b = document.querySelectorAll('.l b');
+		for(var i = 0;i<words.length;i++){
+			//文字的运动方式
+			mTween(words[i],'left',1500,700+i*100,'easeBoth');
+			//雪碧图的运动方式
+			mTween(bs[i],'left',-500,700+i*100,'easeBoth');
+			//年份的运动方式
+			mTween(is[i],'left',1400,700+i*100,'easeBoth');
+			
+		};
+		for(var j = 0;j<w.length;j++){
+			//文字的运动方式
+			mTween(w[j],'left',0,700+j*100,'easeBoth');
+			//雪碧图的运动方式
+			mTween(b[j],'left',1800,700+j*100,'easeBoth');
+			//年份的运动方式
+			mTween(iss[j],'left',-1400,700+j*100,'easeBoth');
+			
+		};
+	
 	};
 	//点击li有对应的div切换
 	click();
@@ -152,7 +180,11 @@ window.onload = function(){
 		}
 		//点击li，滚轮到指定的位置
 		$('.nav li').click(function(){
-			window.scrollTo(0,arr[$(this).index()]);
+			$(document.body).animate({
+				scrollTop:arr[$(this).index()]
+			},1000)
+			console.log(arr[$(this).index()])
+			//window.scrollTo(0,arr[$(this).index()]);
 			$('.nav li').removeClass('hide').filter(this).addClass('hide');
 		});
 	}

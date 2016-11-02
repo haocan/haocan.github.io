@@ -1,4 +1,29 @@
 window.onload = function(){
+	//console.log(img)
+	var vedio = document.getElementById('vedio-list');
+	var menu = document.getElementById('menu');
+	var winWidth,
+	winHeight;
+	if( window.innerWidth ){
+		winWidth = window.innerWidth;
+	} else if( (document.body) && (document.body.clientWidth) ){
+		winWidth = document.body.clientWidth;
+	}
+	if( window.innerHeight ){
+		winHeight = window.innerHeight;
+	} else if( (document.body) && (document.body.clientHeight) ){
+		winHeight = document.body.clientHeight;
+	}
+	var box = document.getElementById('box');
+	box.style.width = winWidth + 'px';
+	box.style.height = winHeight + 'px';
+	var img = document.querySelectorAll('h1 img');
+	setInterval(function(){
+		mTween(img[0],'top',-10,200,'linear',function(){
+			img[0].style.top = 0;
+		});
+	},1000)
+	var vedioArr = ['XNDQxNTEwMjU2','XNDU5MDMxOTQw','XNDU5NDk5MDI0','XNDU5OTQ3MTQw','XNDYwNzc4MTY4','XNDY1NDgwMjM2','XNDQxNTEwMjU2','XNDU5MDMxOTQw','XNDU5NDk5MDI0','XNDU5OTQ3MTQw','XNDQxNTEwMjU2','XNDU5MDMxOTQw'];
 	//menu的效果
 	var nav = document.getElementById('nav');
 	var lis = nav.getElementsByTagName('li');
@@ -11,7 +36,7 @@ window.onload = function(){
 			//判断如果它的第三个孩子存在，就是说li下还有ul就展开
 			if(this.children[3]){
 				//ul的宽逐渐变宽
-				mTween(this.children[3],'width',210,200,'linear');
+				mTween(this.children[3],'width',210,700,'linear');
 			}
 			//延时的是字体的透明度
 			setTimeout(function(){
@@ -34,6 +59,7 @@ window.onload = function(){
 			mTween(span[i],'width',0,400,'linear');
 		};
 	};
+	
 	//歌曲数组
 	var audArr=['Faydee - Legendary','Jay Brannan','Michael Learns To Rock'];
 	
@@ -70,7 +96,7 @@ window.onload = function(){
 			}
 			$('#music audio')[0].play();
 		}
-		//点击播放音频
+		//点击暂停音频
 		$('#music input')[2].onclick=function () {
 			//全局开关关闭
 			audOnOff=false;
@@ -120,7 +146,13 @@ window.onload = function(){
 	];
 	//自动生成vedio列表的图片
 	var m = 0;
-	vedioImg(m);
+	
+	var loader = document.getElementById('loader');
+	setTimeout(function(){
+		loader.style.display = "none";
+		vedioImg(m);
+	},1000)
+	
 	function vedioImg(n){
 		var ul = document.getElementById('vedio');
 		var str = "";
@@ -157,17 +189,17 @@ window.onload = function(){
 					clearInterval(timer);
 					return;
 				}
-				img[num].src = "";
-				img[num].style.opacity = 0;
 				setTimeout(function(){
 					img[num].src = 'image/'+arrImg[m][num]+'.jpg';
 					img[num].style.opacity = 1;
-				},180)
+				},90)
+				img[num].src = "";
+				img[num].style.opacity = 0;
 			},90)
-		},270)
+		},200)
 	};
 	//视频效果的js效果
-	var vedioArr = ['XNDQxNTEwMjU2','XNDU5MDMxOTQw','XNDU5NDk5MDI0','XNDU5OTQ3MTQw','XNDYwNzc4MTY4','XNDY1NDgwMjM2','XNDQxNTEwMjU2','XNDU5MDMxOTQw','XNDU5NDk5MDI0','XNDU5OTQ3MTQw','XNDQxNTEwMjU2','XNDU5MDMxOTQw']
+	//var vedioArr = ['XNDQxNTEwMjU2','XNDU5MDMxOTQw','XNDU5NDk5MDI0','XNDU5OTQ3MTQw','XNDYwNzc4MTY4','XNDY1NDgwMjM2','XNDQxNTEwMjU2','XNDU5MDMxOTQw','XNDU5NDk5MDI0','XNDU5OTQ3MTQw','XNDQxNTEwMjU2','XNDU5MDMxOTQw']
 	vedio(m);
 	function vedio(n){
 		var vedio = document.getElementById('vedio');
@@ -197,7 +229,7 @@ window.onload = function(){
 	//创建视频对象
 	function embed(n){	
     	$('<embed allowFullScreen="true" id="embedid"  quality="high" width="620" height="500"  type="application/x-shockwave-flash" src="http://player.youku.com/player.php/sid/'+vedioArr[n]+'/v.swf"></embed>').appendTo('.flash');
-	};	
+	};
 	//滚轮的控制
 	bar();
 	function bar(){
@@ -318,28 +350,28 @@ window.onload = function(){
 					that.find('div').css({
 						top:-h,
 						left:0
-					}).animate({top:0},300,'linear');
+					}).animate({top:0},700,'linear');
 					break;
 					//1是右方，初始值为正值，上移的时回到0
 					case 1:
 					that.find('div').css({
 						top:0,
 						left:w
-					}).animate({left:0},300,'linear')
+					}).animate({left:0},700,'linear')
 					break;
 					//2是下方，初始值为正值，上移的时回到0
 					case 2:
 					that.find('div').css({
 						top:h,
 						left:0
-					}).animate({top:0},300, 'linear')
+					}).animate({top:0},700, 'linear')
 					break;
 					//3是左方，初始值为负值，上移的时回到0
 					case 3:
 					that.find('div').css({
 						top:0,
 						left:-w
-					}).animate({left:0},300, 'linear')
+					}).animate({left:0},700, 'linear')
 					break;
 				}
 			}else{
@@ -349,31 +381,31 @@ window.onload = function(){
 					that.find('div').css({
 						top:0,
 						left:0
-					}).animate({top:-h},50,'linear');
+					}).animate({top:-h},16,'linear');
 					break;
 					case 1:
 					that.find('div').css({
 						top:0,
 						left:0
-					}).animate({left:w},50,'linear')
+					}).animate({left:w},16,'linear')
 					break;
 					case 2:
 					that.find('div').css({
 						top:0,
 						left:0
-					}).animate({top:h},50, 'linear')
+					}).animate({top:h},16, 'linear')
 					break;
 					case 3:
 					that.find('div').css({
 						top:0,
 						left:0
-					}).animate({left:-w},50, 'linear')
+					}).animate({left:-w},16, 'linear')
 					break;
 				}
 			}
-		});
-		
+		});	
 	};
+	
 	//点击切换vedio列表图片事件
 	  vedioclick();
 	function vedioclick(){
@@ -386,7 +418,6 @@ window.onload = function(){
 			m%=arrImg.length;
 			cut(m);
 			vedio(m);
-			vedioImg(m);
 			move();
 		};
 		prev.onclick = function(){
@@ -397,7 +428,6 @@ window.onload = function(){
 			cut(m);
 			move();
 			vedio(m);
-			vedioImg(m)
 		};
 	}
 }

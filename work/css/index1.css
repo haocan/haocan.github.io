@@ -11,8 +11,8 @@ body{
 }
 /*视频加载*/
 #vedio-wrap{
-	width: 1366px;
-	height: 667px;
+	width: 100%;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -79,8 +79,8 @@ body{
 }
 /*菜单列表的样式*/
 #menu{
-	width: 230px;
-	height: 667px;
+	width: 16.9%;
+	height: 100%;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -99,6 +99,9 @@ body{
 #menu h1 img{
 	width: 230px;
 	height: 130px;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 /*课程视频列表*/
 
@@ -165,10 +168,12 @@ body{
 	width: 50px;
 	height: 20px;
 	line-height:20px;
-	border-radius: 30px;
+	border-radius: 10px;
 	background: #F06000;
-	opacity: .4;
+	font-family: arial;
 	margin-top: 20px;
+	box-shadow: inset 0 0 5px 5px #fff;
+	color: #41D69C;
 }
 #music p{
 	text-align: center;
@@ -226,8 +231,8 @@ body{
 }
 /*音频列表*/
 #vedio-list{
-	width: 1126px;
-	height: 667px;
+	width: 82.5%;
+	height: 100%;
 	margin-left: 240px;
 	position: relative;
 	background: #000;
@@ -264,7 +269,7 @@ body{
 	 left: 50%;
 	 top: 50%;
 	 margin: -25px 0 0 -25px;
-	 z-index: 2;
+	 z-index: 4;
 }
 #vedio-list h2{
 	width: 100%;
@@ -272,9 +277,10 @@ body{
 	position: absolute;
 	left: 0;
 	bottom: 20px;
-	color: red;
+	color: #000;
 	font-size: 20px;
 	font-weight: bold;
+	z-index: 3;
 }
 #vedio-list span{
 	width: 100%;
@@ -282,8 +288,8 @@ body{
 	position: absolute;
 	left: 0;
 	top: 0;
-	background: #000;
-	opacity: .5;
+	background: #F06000;
+	opacity: .7;
 }
 /*加载图片*/
 #loader{

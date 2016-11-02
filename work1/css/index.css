@@ -9,6 +9,7 @@
 	transition:400ms;
 	border-bottom: 1px solid #EDEDED;
 	overflow: hidden;
+	-webkit-text-stroke: 1px red;
 }
 .body .screen{
 	transition: 3s;
@@ -71,7 +72,7 @@
 	float: left;
 	position: relative;
 	text-transform: uppercase;
-	
+	cursor: pointer;
 }
 .nav li:hover{
 	border: 2px solid greenyellow;
@@ -238,6 +239,8 @@
 	height: 614px;
 	padding: 50px 0;
 	background: #F4F4F4;
+	overflow: hidden;
+	-webkit-text-stroke: 1px #F06000;
 }
  .aboutBox{
  	width: auto;
@@ -375,6 +378,7 @@
 	height: 649px;
 	padding: 50px 0;
 	background: #F8F8F8;
+	-webkit-text-stroke: 1px #F06000;
 }
 .service .box{
 	width: 1180px;
