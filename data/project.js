@@ -15,7 +15,7 @@
 var projects = [
 		{
 			projectName:"页面点击切换、移入移出、音乐播放器",
-			projectWebsite:"haocan.github.io/work",
+			projectWebsite:"../work/index.html",
 		    startTime:"2015.09.01",
 			endTime:"至今",
 			projectExplain:"页面点击切换、移入移出、音乐播放器、自定义滚动条，移入列表动画，vedio移入时根据移入方向显示透明层，播放器切歌，一张一张替换图片",
@@ -24,7 +24,7 @@ var projects = [
 		},
 		{
 			projectName:"滑屏效果",
-			projectWebsite:"haocan.github.io/work1",
+			projectWebsite:"../work1/index.html",
 		    startTime:"2015.09.01",
 			endTime:"至今",
 			projectExplain:"滚轮事件，分为4块，轮播图，淡入淡出，放大缩小",
