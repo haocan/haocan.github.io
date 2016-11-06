@@ -1,0 +1,341 @@
+.icon1{
+	position: absolute;
+	background: url(../img/sprite.jpg) no-repeat;
+}
+body{
+	color: #666666;
+}
+/*吊顶*/
+.toptitle_box{
+	width: 100%;
+	height: 30px;
+	background: url(../img/topbg.jpg) repeat-x;
+}
+.toptitle{
+	width: 1210px;
+	height: 30px;
+	margin: 0 auto;
+}
+.toptitle .address li{
+	width: 90px;
+	height: 30px;
+	position: relative;
+	*width: 100px;
+}
+.adr_text a{
+	width: 60px;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+	padding-right: 20px;
+	
+}
+.toptitle i{
+	right: 4px;
+	top: 11px;
+	width: 8px;
+	height: 5px;
+	background-position: -12px -1px;
+	overflow:hidden;
+}
+.toptitle .nav li{
+	float: left;
+	line-height: 30px;
+}
+.toptitle .nav .spacer{
+	width: 1px;
+	height: 12px;
+	background: url(../img/topspacer.jpg) no-repeat;
+	margin-top: 8px;
+	*overflow: hidden;
+}
+.toptitle .nav a{
+	padding: 0 10px;	
+}
+.toptitle .red a{
+	color: #cf1f21;
+	padding-left: 0;
+	padding-right: 14px;
+}
+.toptitle .first_item a{
+	padding-right: 6px;
+}
+.toptitle .nav .item{
+	width: 83 px;
+	height: 30px;
+	position: relative;
+	*width: 90px;
+}
+.toptitle .item a{
+	padding-right: 20px;
+}
+.toptitle .nav i{
+	right: 10px;
+}
+.toptitle .nav .phone_item{
+	width: 103px;
+	*width: 104px;
+} 
+.toptitle em{
+	left: 13px;
+	top: 7px;
+	width: 11px;
+	height: 16px;
+}
+.toptitle .phone_item a{
+	padding-left: 29px;
+}
+.toptitle .nav .had_padding{
+	width: 73px;
+	*width: 80px;
+	
+}
+.toptitle .had_padding i{
+	right: 0;
+}
+.toptitle .had_padding a{
+	padding-right: 15px;
+}
+/*网站头部*/
+.header{
+	width: 100%;
+	height: 125px;
+	border-bottom: 2px solid #b01c1a;
+}
+.head{
+	width: 1210px;
+	height: 125px;
+	margin: 0 auto;
+}
+.head_top{
+	*height: 81px;
+}
+h1{
+	text-indent: -2000px;
+	width: 264px;
+	height: 42px;
+	position: relative;
+	margin-top: 30px;
+	margin-right: 94px;
+}
+h1 .icon1{
+	left: 0;
+	top: 0;
+	width: 264px;
+	height: 42px;
+	background-position: 0 -19px;
+}
+.ser_frame{
+	*width: 538px;
+	*height: 56px;
+}
+.ser_frame input{
+	width: 454px;
+	height: 32px;
+	border: 2px solid #b71d1f;
+	text-indent: 3px;
+	*line-height: 32px;
+}
+.ser_frame form a{
+	color: #fff;
+	line-height: 12px;
+	background: #b71e18;
+	padding: 12px 28px;
+}
+.ser_frame{
+	margin: 25px 104px 0 0;
+}
+.ser_text a{
+	float: left;
+	height: 12px;
+	line-height: 12px;
+	margin-top: 8px;
+	margin-right: 10px;
+	color: #656565;
+	word-spacing: 4px;
+}
+.ser_text a:hover{
+	color: #cf1a23;
+}
+.ser_text .red{
+	color: #cf1a23;
+}
+.shopping_cart{
+	width: 139px;
+	height: 34px;
+	line-height: 34px;
+	background: #f9f9f9;
+	border: 1px solid #dedede;
+	position: relative;
+	margin-top: 25px;
+	text-align: center;
+	*width: 141px;
+	*height: 36px;
+}
+.shopping_cart i{
+	right: 11px;
+	top: 13px;
+	width: 6px;
+	height: 9px;
+	background-position: -123px -80px;
+}
+.shopping_cart span{
+	left: 19px;
+	top: 10px;
+	width: 16px;
+	height: 13px;
+	background-position: -50px 0;
+}
+.shopping_cart em{
+	right: 19px;
+	top: -3px;	
+	width: 16px;
+	height: 14px;
+	background-position: -68px 0;
+}
+.classify a{
+	display: block;
+	width: 210px;
+	height: 44px;
+	line-height: 44px;
+	background: #b2191b;
+	font-size: 14px;
+	text-indent: 10px;
+	color: #fff;	
+}
+body .classify a:hover{
+	color: #fff !important;
+}
+.head_bottom{
+	*height: 44px;
+}
+.head_bottom .nav{
+	height: 36px;
+	margin-top: 8px;
+}
+.head_bottom .nav a{
+	float: left;
+	padding: 0 20px;
+	line-height: 36px;
+	font-size: 14px;
+	color: #696969;
+	word-spacing: 33px;	
+}
+.head_bottom .nav a:hover{
+	color: #cf1a23;
+}
+/*主体内容*/
+.content{
+	width: 1210px;
+	margin: 0 auto;
+}
+/*每个楼层第一张广告的效果*/
+.effect a:nth-of-type(2){
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 350px;
+	height: 350px;
+	background: linear-gradient(135deg,rgba(255,255,255,0) 49%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 51%) no-repeat -600px 0;
+	transition: 3s;
+}
+.effect:hover .effect1{
+	background-position: 600px 0;
+	z-index: 10;
+}
+/*边框图标*/
+.frame{
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 6px;
+	height: 657px;
+	background: #7a6e6e;
+	
+}
+.frame .cont1{
+	position: absolute;
+	right: 0;
+	top: 268px;
+	width: 35px;
+	height: 180px;
+}
+.frame .cont-down{
+	position: absolute;
+	right: 0;
+	bottom: 60px;
+	width: 35px;
+	height: 71px;
+}
+.frame .cont1 .all-style{
+	width: 35px;
+	height: 35px;
+	background: #7a6e6e;
+	border-radius: 3px 0 0 3px;
+	margin-bottom: 1px;
+	position: relative;
+	transition: 3s;
+}
+.frame .cont-down .all-style{
+	width: 35px;
+	height: 35px;
+	background: #7a6e6e;
+	border-radius: 3px  0 0 3px;
+	position: relative;
+	/*transition: 3s;*/
+}
+.frame .feedback{
+	margin-top: 1px;
+}
+.all-style>a{
+	display: inline-block;
+	width: 34px;
+	height: 35px;
+	/*margin-left: 1px;*/
+}
+/*.frame .shopping-cart>a{
+	background: url(../img/frame11.png) no-repeat;
+}
+.frame .collect>a{
+	background: url(../img/frame12.png) no-repeat;
+}
+.frame .record>a{
+	background: url(../img/frame13.png) no-repeat;
+}
+.frame .message>a{
+	background: url(../img/frame14.png) no-repeat;
+}
+.frame .jimi>a{
+	background: url(../img/frame15.png) no-repeat;
+}
+.frame .stick-top>a{
+	background: url(../img/frame16.png) no-repeat;
+}
+.frame .feedback>a{
+	background: url(../img/frame17.png) no-repeat;
+}*/
+.all-style div{
+	position: absolute;
+	right: 64px;
+	top: 0;
+	width: 64px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	background: #c81622;
+	border-radius: 3px 0 0 3px;
+	display: none;
+/*	transition: 3s;*/
+}
+.all-style div a{
+	font-family: "微软雅黑";
+	color: #fff;
+}
+.all-style:hover{
+	background: #c81622;
+}
+.all-style:hover .out{
+	display:block;
+	left: -64px;
+	transition: 5s;
+}

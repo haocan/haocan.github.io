@@ -1,0 +1,15 @@
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearFix:after{
+	content: "";clear: both;display: block;
+}
+.red{
+	color: #d31320;
+}
+body a:hover{
+	color: #d31320 !important;
+}
