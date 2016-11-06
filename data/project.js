@@ -27,7 +27,7 @@ var projects = [
 			projectWebsite:"../jdapp/index.html",
 		    startTime:"2015.11.01",
 			endTime:"",
-			projectExplain:"手机端的京东页面"
+			projectExplain:"手机端的京东页面",
 			projectLabel:["html","css3","css"],
 			projectThumbnail:"images/icon/8.jpg"
 		},
