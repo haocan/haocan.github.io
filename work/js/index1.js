@@ -17,6 +17,23 @@ window.onload = function(){
 	var box = document.getElementById('box');
 	box.style.width = winWidth + 'px';
 	box.style.height = winHeight + 'px';
+	
+	/*var w = winWidth - menu.offsetWidth;
+	vedio.style.width = w + 'px';*/
+	var ul = document.getElementById('vedio');
+	var Li = ul.getElementsByTagName('li');
+	var liWidth =parseInt(( vedio.clientWidth - 10)/3);
+	var liHeight =parseInt(( vedio.clientHeight)/3);
+	var num=0;
+	$(window).resize(function() {
+		location.reload(); 
+	    var width = $(this).width();
+	    var height = $(this).height();
+	    var w = width - menu.offsetWidth;
+		vedio.style.width = w + 'px';
+		vedio.style.height = height + 'px';
+	});
+	
 	var img = document.querySelectorAll('h1 img');
 	setInterval(function(){
 		mTween(img[0],'top',-10,200,'linear',function(){
@@ -59,7 +76,6 @@ window.onload = function(){
 			mTween(span[i],'width',0,400,'linear');
 		};
 	};
-	
 	//歌曲数组
 	var audArr=['Faydee - Legendary','Jay Brannan','Michael Learns To Rock'];
 	
@@ -123,9 +139,7 @@ window.onload = function(){
 			lis[i].onmouseover = function(){
 				span[this.index].style.display = "block";
 			};
-			lis[i].onmouseout = function(){
-				span[this.index].style.display = "none";
-			};
+		
 		}
 	};
 	var arrImg = [[1,10,94,93,92,91,89,88,9,87,8,75],[73,72,7,60,6,59,58,57,56,55,54,53,52],
@@ -152,7 +166,6 @@ window.onload = function(){
 		loader.style.display = "none";
 		vedioImg(m);
 	},1000)
-	
 	function vedioImg(n){
 		var ul = document.getElementById('vedio');
 		var str = "";
@@ -163,7 +176,6 @@ window.onload = function(){
 		ul.innerHTML = str;
 		var Li = ul.getElementsByTagName('li');
 		var div = ul.getElementsByTagName('div');
-		var num=0;
 		//console.log(Li.length)
 		for(var i=0;i<Li.length;i++){
 			if(i%3==0){
@@ -171,8 +183,11 @@ window.onload = function(){
 					num++;
 				}
 			}
-		Li[i].style.left=i%3*372+'px';
-		Li[i].style.top=num*227+'px';
+		Li[i].style.width= liWidth + 'px';
+		//console.log(liWidth)
+		Li[i].style.height= liHeight + 'px';
+		Li[i].style.left=(i%3)*liWidth + 'px';
+		Li[i].style.top= num * liHeight + 'px';
 		//console.log(num)
 	};
 	//切换图片时是一张一张切换的
@@ -200,6 +215,8 @@ window.onload = function(){
 	};
 	//视频效果的js效果
 	//var vedioArr = ['XNDQxNTEwMjU2','XNDU5MDMxOTQw','XNDU5NDk5MDI0','XNDU5OTQ3MTQw','XNDYwNzc4MTY4','XNDY1NDgwMjM2','XNDQxNTEwMjU2','XNDU5MDMxOTQw','XNDU5NDk5MDI0','XNDU5OTQ3MTQw','XNDQxNTEwMjU2','XNDU5MDMxOTQw']
+	
+	 vedioclick();
 	vedio(m);
 	function vedio(n){
 		var vedio = document.getElementById('vedio');
@@ -217,6 +234,37 @@ window.onload = function(){
 				wrap.style.display = "block";
 				bg.style.display = "block";
 				h2s[0].innerHTML = arrList[n][this.index];
+				embed(this.index);	
+			};
+		}
+		btn.onclick = function(){
+			wrap.style.display = "none";
+			bg.style.display = "none";
+			flash.innerHTML = "";
+		};
+	};
+	menuVedio(m)
+	function menuVedio(n){
+		var course = document.getElementsByClassName('.course');
+		var liMenu = document.querySelectorAll('.course li a');
+		var wrap = document.getElementById('vedio-wrap');
+		var bg = document.getElementById('vedio-bg');
+		var flash = document.getElementsByClassName('flash')[0];
+		var btn = document.getElementsByClassName('close-btn')[0];
+		var content = document.getElementsByClassName('info-content')[0];
+		var h2s = content.getElementsByTagName('h2');
+		//console.log(arrList[0].length)
+		for(var i = 0;i<liMenu.length;i++){
+			
+			liMenu[i].index = i;
+			liMenu[i].onclick = function(){
+				this.offsetParent.offsetParent.style.width = 0;
+				n++;
+				n%=vedioArr.length;
+				/*m%=arrList[0].length;*/
+				wrap.style.display = "block";
+				bg.style.display = "block";
+				h2s[0].innerHTML = this.innerHTML;
 				embed(this.index);	
 			};
 		}
@@ -350,28 +398,28 @@ window.onload = function(){
 					that.find('div').css({
 						top:-h,
 						left:0
-					}).animate({top:0},700,'linear');
+					}).stop().animate({top:0},300,'linear');
 					break;
 					//1是右方，初始值为正值，上移的时回到0
 					case 1:
 					that.find('div').css({
 						top:0,
 						left:w
-					}).animate({left:0},700,'linear')
+					}).stop().animate({left:0},300,'linear')
 					break;
 					//2是下方，初始值为正值，上移的时回到0
 					case 2:
 					that.find('div').css({
 						top:h,
 						left:0
-					}).animate({top:0},700, 'linear')
+					}).stop().animate({top:0},300, 'linear')
 					break;
 					//3是左方，初始值为负值，上移的时回到0
 					case 3:
 					that.find('div').css({
 						top:0,
 						left:-w
-					}).animate({left:0},700, 'linear')
+					}).stop().animate({left:0},300, 'linear')
 					break;
 				}
 			}else{
@@ -381,25 +429,25 @@ window.onload = function(){
 					that.find('div').css({
 						top:0,
 						left:0
-					}).animate({top:-h},16,'linear');
+					}).stop().animate({top:-h},200,'linear');
 					break;
 					case 1:
 					that.find('div').css({
 						top:0,
 						left:0
-					}).animate({left:w},16,'linear')
+					}).stop().animate({left:w},200,'linear')
 					break;
 					case 2:
 					that.find('div').css({
 						top:0,
 						left:0
-					}).animate({top:h},16, 'linear')
+					}).stop().animate({top:h},200, 'linear')
 					break;
 					case 3:
 					that.find('div').css({
 						top:0,
 						left:0
-					}).animate({left:-w},16, 'linear')
+					}).stop().animate({left:-w},200, 'linear')
 					break;
 				}
 			}
@@ -407,7 +455,6 @@ window.onload = function(){
 	};
 	
 	//点击切换vedio列表图片事件
-	  vedioclick();
 	function vedioclick(){
 		var ul = document.getElementById('vedio');
 		var Li = ul.getElementsByTagName('li');

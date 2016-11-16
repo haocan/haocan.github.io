@@ -20,8 +20,8 @@ body{
 	display: none;
 }
  #vedio-wrap .vedio-box{
-	width: 957px;
-	height: 667px;
+	width: 65%;
+	height:100%;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -58,8 +58,8 @@ body{
 }
 /*info的样式设置*/
 #vedio-wrap .vedio-info{
-	width: 409px;
-	height: 667px;
+	width: 30%;
+	height: 100%;
 	background: #FFFFFF;
 	position: absolute;
 	top: 0;
@@ -79,7 +79,7 @@ body{
 }
 /*菜单列表的样式*/
 #menu{
-	width: 16.9%;
+	width: 230px;
 	height: 100%;
 	position: absolute;
 	left: 0;
@@ -231,7 +231,7 @@ body{
 }
 /*音频列表*/
 #vedio-list{
-	width: 82.5%;
+	/*width: 1126px;*/
 	height: 100%;
 	margin-left: 240px;
 	position: relative;
@@ -239,15 +239,18 @@ body{
 }
 #vedio-list ul{
 	position: absolute;
+	z-index: 1;
 }
 #vedio-list ul li{
-	width: 372px;
-	height: 227px;
+	width: 0;
+	height: 0;
+	cursor: pointer;
 	position: absolute;
 	left: 0;
 	top: 0;
+	/*position: relative;
+	float: left;*/
 	overflow: hidden;
-	cursor: pointer;
 }
 #vedio-list ul li img{
 	width: 100%;

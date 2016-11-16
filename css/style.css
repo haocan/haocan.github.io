@@ -436,7 +436,7 @@ body {
 
 
 .case{
-	overflow: hidden;
+	/*overflow: hidden;*/
 	background-color: #eef2f5;
 	display: none;
 }
