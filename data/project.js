@@ -24,7 +24,7 @@ var projects = [
 		},
 		{
 			projectName:"仿京东app端",
-			projectWebsite:"../jdapp/index.html",
+			projectWebsite:"jdapp/index.html",
 		    startTime:"2015.11.01",
 			endTime:"2015.11.27",
 			projectExplain:"手机端的京东页面",
@@ -33,7 +33,7 @@ var projects = [
 		},
 		{
 			projectName:"页面点击切换、移入移出、音乐播放器",
-			projectWebsite:"../work/index.html",
+			projectWebsite:"work/index.html",
 		    startTime:"2016.09.01",
 			endTime:"2016.09.25",
 			projectExplain:"页面点击切换、移入移出、音乐播放器、自定义滚动条，移入列表动画，vedio移入时根据移入方向显示透明层，播放器切歌，一张一张替换图片",
@@ -42,7 +42,7 @@ var projects = [
 		},
 		{
 			projectName:"滑屏效果",
-			projectWebsite:"../work1/index.html",
+			projectWebsite:"work1/index.html",
 		    startTime:"2016.10.01",
 			endTime:"2016.10.15",
 			projectExplain:"滚轮事件，分为4块，轮播图，淡入淡出，放大缩小",
